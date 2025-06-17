@@ -1,40 +1,65 @@
-import React from "react";
-import { FaSearch, FaPaintBrush } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { FaGithub, FaLinkedin, FaTwitter, FaMoon, FaSun } from "react-icons/fa";
 
 function Navbar() {
-  return (
-    <nav className="flex justify-between items-center px-6 py-3 bg-black text-white rounded-lg shadow-md">
-      {/* Left - Logo */}
-      <div className="text-xl font-bold italic font-serif text-white">
-        Tunmidev
-      </div>
+  const [theme, setTheme] = useState("light");
 
-      {/* Center - Links */}
-      <ul className="flex gap-6 text-sm  font-serif">
-        <li className="font-semibold text-white">Home</li>
-        <li className="hover:text-gray-400 cursor-pointer">Blog</li>
-        <li className="hover:text-gray-400 cursor-pointer">Projects</li>
-        <li className="hover:text-gray-400 cursor-pointer">About</li>
-        <li className="hover:text-gray-400 cursor-pointer">Guestbook</li>
+  // Load saved theme from localStorage
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+      document.documentElement.setAttribute("data-theme", storedTheme);
+    }
+  }, []);
+
+  // Toggle theme handler
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
+
+  return (
+    <nav className="flex justify-between items-center px-6 py-3 bg-white dark:bg-black text-black dark:text-white rounded-lg shadow-md">
+      <div className="text-xl font-bold italic font-serif">Tunmidev</div>
+
+      <ul className="flex gap-6 text-sm font-serif">
+        <li className="font-semibold cursor-pointer">Home</li>
+        <li className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">
+          Blog
+        </li>
+        <li className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">
+          Projects
+        </li>
+        <li className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">
+          About
+        </li>
+        <li className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">
+          Skills
+        </li>
       </ul>
 
-      {/* Right - Search and Theme Toggle */}
       <div className="flex items-center gap-4">
-        {/* Search bar */}
-        <div className="flex items-center gap-2 px-3 py-1 bg-zinc-900 text-gray-300 rounded-md border border-zinc-700">
-          <FaSearch className="text-sm" />
-          <input
-            type="text"
-            placeholder="Search..."
-            className="bg-transparent outline-none text-sm w-24"
-          />
-          <span className="text-xs text-gray-400 bg-zinc-800 px-1.5 py-0.5 rounded">
-            Ctrl K
-          </span>
+        <p className="text-xs text-gray-500 dark:text-gray-300 italic">
+          Software Engineer | Frontend Dev
+        </p>
+        <div className="flex gap-4 text-xl">
+          <a href="#">
+            <FaGithub />
+          </a>
+          <a href="#">
+            <FaLinkedin />
+          </a>
+          <a href="#">
+            <FaTwitter />
+          </a>
         </div>
 
-        {/* Theme toggle (dummy icon) */}
-        <FaPaintBrush className="cursor-pointer hover:text-gray-400" />
+        <button onClick={toggleTheme}>
+          {theme === "dark" ? <FaSun /> : <FaMoon />}
+        </button>
       </div>
     </nav>
   );
