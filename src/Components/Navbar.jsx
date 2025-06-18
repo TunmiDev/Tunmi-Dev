@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { FaGithub, FaLinkedin, FaTwitter, FaMoon, FaSun } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaMoon,
+  FaSun,
+} from "react-icons/fa";
+import SocialIcon from "./SocialIcon";
 
 function Navbar() {
   const [theme, setTheme] = useState("light");
@@ -45,16 +52,25 @@ function Navbar() {
         <p className="text-xs text-gray-500 dark:text-gray-300 italic">
           Software Engineer | Frontend Dev
         </p>
-        <div className="flex gap-4 text-xl">
-          <a href="#">
-            <FaGithub />
-          </a>
-          <a href="#">
-            <FaLinkedin />
-          </a>
-          <a href="#">
-            <FaTwitter />
-          </a>
+        <div className="flex gap-6">
+          <SocialIcon
+            href="https://github.com/tunmidev"
+            icon={FaGithub}
+            label="GitHub"
+            hoverColor="hover:text-gray-800 dark:hover:text-gray-300"
+          />
+          <SocialIcon
+            href="https://linkedin.com/in/tunmidev"
+            icon={FaLinkedin}
+            label="LinkedIn"
+            hoverColor="hover:text-[#0077B5]"
+          />
+          <SocialIcon
+            href="mailto:tunmidev@example.com"
+            icon={FaEnvelope}
+            label="Email"
+            hoverColor="hover:text-red-600 dark:hover:text-red-400"
+          />
         </div>
 
         <button onClick={toggleTheme}>
