@@ -22,7 +22,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between items-center px-6 py-3 bg-white dark:bg-black text-black dark:text-white rounded-lg shadow-md">
+    <nav className="flex justify-between items-center px-6 py-3 bg-white dark:bg-black text-black dark:text-white transition-all duration-300 ">
       <div className="text-xl font-bold italic font-serif">Tunmidev</div>
 
       <ul className="flex gap-6 text-sm font-serif">
