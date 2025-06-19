@@ -9,7 +9,8 @@ const About = () => {
         className="py-20 px-6 max-w-6xl mx-auto transition-all duration-300"
       >
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Adewole Oluwatunmise
+          About Me
+          <span>.</span>
         </h2>
 
         <div className="flex flex-col md:flex-row items-center gap-10">

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Components/navbar";
 import Hero from "./Components/Hero";
 import About from "./Components/About";
+import Project from "./Components/Project";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true); // Start in dark mode
@@ -21,6 +22,7 @@ function App() {
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Hero />
       <About />
+      <Project />
     </div>
   );
 }
