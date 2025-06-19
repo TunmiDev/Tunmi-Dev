@@ -1,7 +1,6 @@
 import React from "react";
 import profile1 from "../assets/profile1.jpg";
 import profile2 from "../assets/profile2.jpg";
-import profile3 from "../assets/profile3.jpg";
 
 const Hero = () => {
   return (
@@ -33,23 +32,20 @@ const Hero = () => {
             building.
           </p>
         </div>
-
-        {/* Stacked Images */}
-        <div className="relative w-full h-full">
-          <img
-            src={profile3}
-            alt="Profile 3"
-            className="absolute top-4 left-4 w-full h-full object-cover grayscale rotate-2 shadow-xl rounded-md"
-          />
-          <img
-            src={profile2}
-            alt="Profile 2"
-            className="absolute top-2 left-2 w-full h-full object-cover grayscale -rotate-2 shadow-xl rounded-md"
-          />
+        {/*Stacked Images */}
+        <div className="relative w-[260px] h-[340px] mx-auto">
+          {/* First Image - lower and to the left */}
           <img
             src={profile1}
+            alt="Profile 2"
+            className="absolute top-4 left-12 w-[75%] h-[80%] object-cover  grayscale shadow-lg rounded-md border-2 border-white dark:border-black z-30"
+          />
+
+          {/* Second Image - higher and to the right */}
+          <img
+            src={profile2}
             alt="Profile 1"
-            className="relative w-full h-full object-cover shadow-2xl grayscale rounded-md border-4 border-white dark:border-black"
+            className="absolute top-16 left-0 w-[75%] h-[80%] object-cover grayscale shadow-md rounded-md border-2 border-white dark:border-black z-20"
           />
         </div>
       </div>
