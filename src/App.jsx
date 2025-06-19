@@ -1,6 +1,7 @@
 // src/App.jsx
 import React, { useState, useEffect } from "react";
 import Navbar from "./Components/navbar";
+import Hero from "./Components/Hero";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true); // Start in dark mode
@@ -17,7 +18,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 p-4">
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      {/* Your content here */}
+      <Hero />
     </div>
   );
 }
