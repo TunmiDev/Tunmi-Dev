@@ -1,9 +1,9 @@
 // src/App.jsx
 import React, { useState, useEffect } from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Project from "./components/Project";
+import Navbar from "./components/tempNavbar";
+import Hero from "./components/tempHero";
+import About from "./components/tempAbout";
+import Project from "./components/tempProject";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true); // Start in dark mode
