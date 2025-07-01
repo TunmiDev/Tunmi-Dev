@@ -1,5 +1,5 @@
 import React from "react";
-import profile2 from "../assets/profile2.jpg";
+import Profile2 from "../assets/profile2.jpg";
 
 const About = () => {
   return (
@@ -17,7 +17,7 @@ const About = () => {
           {/* Image */}
           <div className="w-full md:w-1/3 flex justify-center">
             <img
-              src={profile2}
+              src={Profile2}
               alt="Tunmise"
               className="rounded-2xl w-[250px] h-[300px] object-cover shadow-lg  hover:grayscale-0 transition duration-500"
             />

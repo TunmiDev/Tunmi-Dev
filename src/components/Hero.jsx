@@ -1,6 +1,6 @@
 import React from "react";
-import profile1 from "../assets/Profile1.jpg";
-import profile2 from "../assets/Profile2.jpg";
+import Profile1 from "../assets/Profile1.jpg";
+import Profile2 from "../assets/Profile2.jpg";
 
 const Hero = () => {
   return (
@@ -36,14 +36,14 @@ const Hero = () => {
         <div className="relative w-[260px] h-[340px] mx-auto">
           {/* First Image - lower and to the left */}
           <img
-            src={profile1}
+            src={Profile1}
             alt="Profile 2"
             className="absolute top-4 left-12 w-[75%] h-[80%] object-cover  grayscale shadow-lg rounded-md border-2 border-white dark:border-black z-30"
           />
 
           {/* Second Image - higher and to the right */}
           <img
-            src={profile2}
+            src={Profile2}
             alt="Profile 1"
             className="absolute top-16 left-0 w-[75%] h-[80%] object-cover grayscale shadow-md rounded-md border-2 border-white dark:border-black z-20"
           />
