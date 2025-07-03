@@ -91,11 +91,6 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-16  text-white">
-      <div className="text-center">
-        <h2 className="text-4xl font-bold mb-2">Skills & Tools</h2>
-        <p className="text-gray-400 mb-8">Technologies I work with regularly</p>
-      </div>
-
       {/* 3D Cloud on large screens */}
       <div className="hidden md:flex justify-center">
         <div className="h-[500px] w-full flex justify-center items-center">

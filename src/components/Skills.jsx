@@ -5,7 +5,7 @@ import SkillsGroup from "./SkillsGroup";
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-16   dark:text-white">
+    <section id="skills" className="py-16 pt-10 pb-16  dark:text-white">
       <div className="container mx-auto px-6 md:flex md:space-x-10 items-start">
         {/* Left: 3D Skills Cloud */}
         <div className="hidden md:flex w-1/2 justify-center items-center">
@@ -14,7 +14,7 @@ const Skills = () => {
 
         {/* Right: Grouped Skills */}
         <div className="w-full md:w-1/2">
-          <h2 className="text-4xl font-bold mb-6 text-center md:text-left">
+          <h2 className="text-4xl font-medium mb-6 text-center mt-52 md:text-left">
             Skills / Stack
           </h2>
           <SkillsGroup />
