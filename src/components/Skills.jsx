@@ -14,7 +14,7 @@ const Skills = () => {
 
         {/* Right: Grouped Skills */}
         <div className="w-full md:w-1/2">
-          <h2 className="text-3xl font-medium mb-6 text-center mt-32 md:text-left pl-12">
+          <h2 className="text-3xl font-medium mb-6 text-center mt-32 md:text-left pl-8">
             Skills / Stack
           </h2>
           <SkillsGroup />
