@@ -35,16 +35,16 @@ function Navbar() {
       <ul className="flex gap-6 text-sm font-serif ml-48">
         <li className="font-semibold cursor-pointer">Home</li>
         <li className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">
-          Blog
+          <a href="#about">About</a>
         </li>
         <li className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">
-          Projects
+          <a href="#projects">Projects</a>
         </li>
         <li className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">
-          About
+          <a href="#">Skills</a>
         </li>
         <li className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">
-          Skills
+          <a href="#contact">Contact</a>
         </li>
       </ul>
 
