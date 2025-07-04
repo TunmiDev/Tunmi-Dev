@@ -6,7 +6,6 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
-
 import {
   SiReact,
   SiNextdotjs,
@@ -19,92 +18,59 @@ import {
   SiFigma,
   SiCanva,
   SiAdobephotoshop,
-  SiAdobeillustrator,
-  SiDocker,
-  SiJenkins,
   SiVercel,
   SiNetlify,
-  SiNginx,
   SiGit,
   SiGithub,
-  //   SiVisualstudio,
   SiPrettier,
 } from "react-icons/si";
 
-// 🎨 Color Map for Brand Icons
-const getIconWithColor = (Icon, name) => {
-  const colors = {
-    ReactJS: "#61DAFB",
-    NextJS: "#000000",
-    MaterialUI: "#007FFF",
-    Bootstrap: "#7952B3",
-    JavaScript: "#F7DF1E",
-    TypeScript: "#3178C6",
-    HTML5: "#E34F26",
-    CSS3: "#1572B6",
-    Figma: "#F24E1E",
-    Canva: "#00C4CC",
-    Photoshop: "#31A8FF",
-    Illustrator: "#FF9A00",
-    Docker: "#2496ED",
-    Jenkins: "#D24939",
-    Vercel: "#000000",
-    Netlify: "#00C7B7",
-    Nginx: "#009639",
-    Git: "#F05032",
-    GitHub: "#181717",
-    // "VS Code": "#007ACC",
-    Prettier: "#F7B93E",
-  };
-
-  return (
-    <Icon
-      className="text-3xl" // 👈 Smaller size now
-      style={{
-        color: colors[name] || "inherit",
-      }}
-    />
-  );
-};
-
+// Define categories and skills
 const categories = [
   {
     title: "Frontend",
     icon: <Code2 className="w-5 h-5 mr-2" />,
     skills: [
-      { name: "ReactJS", icon: SiReact },
-      { name: "NextJS", icon: SiNextdotjs },
-      { name: "MaterialUI", icon: SiMui },
-      { name: "Bootstrap", icon: SiBootstrap },
-      { name: "JavaScript", icon: SiJavascript },
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "HTML5", icon: SiHtml5 },
-      { name: "CSS3", icon: SiCss3 },
-      { name: "Figma", icon: SiFigma },
-      { name: "Canva", icon: SiCanva },
-      { name: "Photoshop", icon: SiAdobephotoshop },
-      { name: "Illustrator", icon: SiAdobeillustrator },
+      { name: "ReactJS", icon: <SiReact size={28} color="#61DAFB" /> },
+      { name: "NextJS", icon: <SiNextdotjs size={28} color="#000000" /> },
+      { name: "MaterialUI", icon: <SiMui size={28} color="#007FFF" /> },
+      {
+        name: "Bootstrap",
+        icon: <SiBootstrap size={28} color="#7952B3" />,
+      },
+      {
+        name: "JavaScript",
+        icon: <SiJavascript size={28} color="#F7DF1E" />,
+      },
+      {
+        name: "TypeScript",
+        icon: <SiTypescript size={28} color="#3178C6" />,
+      },
+      { name: "HTML5", icon: <SiHtml5 size={28} color="#E34F26" /> },
+      { name: "CSS3", icon: <SiCss3 size={28} color="#1572B6" /> },
+      { name: "Figma", icon: <SiFigma size={28} color="#F24E1E" /> },
+      { name: "Canva", icon: <SiCanva size={28} color="#00C4CC" /> },
+      {
+        name: "Photoshop",
+        icon: <SiAdobephotoshop size={28} color="#31A8FF" />,
+      },
     ],
   },
   {
     title: "Deployment",
     icon: <UploadCloud className="w-5 h-5 mr-2" />,
     skills: [
-      { name: "Docker", icon: SiDocker },
-      { name: "Jenkins", icon: SiJenkins },
-      { name: "Vercel", icon: SiVercel },
-      { name: "Netlify", icon: SiNetlify },
-      { name: "Nginx", icon: SiNginx },
+      { name: "Vercel", icon: <SiVercel size={28} color="#000000" /> },
+      { name: "Netlify", icon: <SiNetlify size={28} color="#00C7B7" /> },
     ],
   },
   {
     title: "Others",
     icon: <Layers className="w-5 h-5 mr-2" />,
     skills: [
-      { name: "Git", icon: SiGit },
-      { name: "GitHub", icon: SiGithub },
-      //   { name: "VS Code", icon: SiVisualstudio },
-      { name: "Prettier", icon: SiPrettier },
+      { name: "Git", icon: <SiGit size={28} color="#F05032" /> },
+      { name: "GitHub", icon: <SiGithub size={28} color="#181717" /> },
+      { name: "Prettier", icon: <SiPrettier size={28} color="#F7B93E" /> },
     ],
   },
 ];
@@ -126,7 +92,7 @@ const SkillsGroup = () => {
             key={title}
             className="bg-gray-50 dark:bg-[#1f1f1f] transition-all duration-300"
           >
-            {/* Accordion Header */}
+            {/* Header */}
             <button
               className="w-full flex items-center justify-between px-4 py-3 focus:outline-none"
               onClick={() => toggleCategory(title)}
@@ -142,19 +108,19 @@ const SkillsGroup = () => {
               )}
             </button>
 
-            {/* Accordion Content */}
+            {/* Skills */}
             {isOpen && (
               <div className="px-4 pb-4 pt-2">
-                <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
+                <div className="flex flex-wrap gap-1.5">
                   {skills.map(({ name, icon }) => (
                     <div
                       key={name}
-                      className="flex flex-col items-center text-center"
+                      className="p-2 w-[68px] flex flex-col items-center rounded-md bg-white dark:bg-gray-800 shadow-sm hover:scale-120 transition-transform text-center text-inherit"
                     >
-                      <div className="p-3 rounded-lg bg-white dark:bg-gray-800 shadow-md hover:scale-105 transition-transform">
-                        {getIconWithColor(icon, name)}
-                      </div>
-                      <span className="text-sm mt-1">{name}</span>
+                      <span className="text-inherit">{icon}</span>
+                      <span className="text-[10px] font-medium mt-1 leading-tight">
+                        {name}
+                      </span>
                     </div>
                   ))}
                 </div>
