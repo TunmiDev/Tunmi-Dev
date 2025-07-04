@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Code2,
   UploadCloud,
@@ -25,34 +25,104 @@ import {
   SiPrettier,
 } from "react-icons/si";
 
-// Define categories and skills
+// 💡 Subcomponent: one skill card
+const SkillCard = ({ name, icon, color }) => {
+  const iconRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    iconRef.current?.classList.remove("grayscale");
+  };
+
+  const handleClick = () => {
+    iconRef.current?.classList.remove("grayscale");
+  };
+
+  const handleMouseLeave = () => {
+    iconRef.current?.classList.add("grayscale");
+  };
+
+  return (
+    <div
+      onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="cursor-pointer p-2 w-[68px] flex flex-col items-center rounded-md bg-white dark:bg-gray-800 shadow-sm transition-transform duration-300 hover:scale-110 border-2 border-transparent hover:border-current"
+      style={{ color }}
+    >
+      <span
+        ref={iconRef}
+        title={name}
+        className="transition-all duration-500 ease-in-out filter grayscale"
+      >
+        {icon}
+      </span>
+      <span className="text-[10px] font-medium mt-1 leading-tight text-black dark:text-white">
+        {name}
+      </span>
+    </div>
+  );
+};
+
+// 💡 Main categories + skill list
 const categories = [
   {
     title: "Frontend",
     icon: <Code2 className="w-5 h-5 mr-2" />,
     skills: [
-      { name: "ReactJS", icon: <SiReact size={28} color="#61DAFB" /> },
-      { name: "NextJS", icon: <SiNextdotjs size={28} color="#000000" /> },
-      { name: "MaterialUI", icon: <SiMui size={28} color="#007FFF" /> },
+      {
+        name: "ReactJS",
+        icon: <SiReact size={28} color="#61DAFB" />,
+        color: "#61DAFB",
+      },
+      {
+        name: "NextJS",
+        icon: <SiNextdotjs size={28} color="#000000" />,
+        color: "#000000",
+      },
+      {
+        name: "MaterialUI",
+        icon: <SiMui size={28} color="#007FFF" />,
+        color: "#007FFF",
+      },
       {
         name: "Bootstrap",
         icon: <SiBootstrap size={28} color="#7952B3" />,
+        color: "#7952B3",
       },
       {
         name: "JavaScript",
         icon: <SiJavascript size={28} color="#F7DF1E" />,
+        color: "#F7DF1E",
       },
       {
         name: "TypeScript",
         icon: <SiTypescript size={28} color="#3178C6" />,
+        color: "#3178C6",
       },
-      { name: "HTML5", icon: <SiHtml5 size={28} color="#E34F26" /> },
-      { name: "CSS3", icon: <SiCss3 size={28} color="#1572B6" /> },
-      { name: "Figma", icon: <SiFigma size={28} color="#F24E1E" /> },
-      { name: "Canva", icon: <SiCanva size={28} color="#00C4CC" /> },
+      {
+        name: "HTML5",
+        icon: <SiHtml5 size={28} color="#E34F26" />,
+        color: "#E34F26",
+      },
+      {
+        name: "CSS3",
+        icon: <SiCss3 size={28} color="#1572B6" />,
+        color: "#1572B6",
+      },
+      {
+        name: "Figma",
+        icon: <SiFigma size={28} color="#F24E1E" />,
+        color: "#F24E1E",
+      },
+      {
+        name: "Canva",
+        icon: <SiCanva size={28} color="#00C4CC" />,
+        color: "#00C4CC",
+      },
       {
         name: "Photoshop",
         icon: <SiAdobephotoshop size={28} color="#31A8FF" />,
+        color: "#31A8FF",
       },
     ],
   },
@@ -60,17 +130,37 @@ const categories = [
     title: "Deployment",
     icon: <UploadCloud className="w-5 h-5 mr-2" />,
     skills: [
-      { name: "Vercel", icon: <SiVercel size={28} color="#000000" /> },
-      { name: "Netlify", icon: <SiNetlify size={28} color="#00C7B7" /> },
+      {
+        name: "Vercel",
+        icon: <SiVercel size={28} color="#000000" />,
+        color: "#000000",
+      },
+      {
+        name: "Netlify",
+        icon: <SiNetlify size={28} color="#00C7B7" />,
+        color: "#00C7B7",
+      },
     ],
   },
   {
     title: "Others",
     icon: <Layers className="w-5 h-5 mr-2" />,
     skills: [
-      { name: "Git", icon: <SiGit size={28} color="#F05032" /> },
-      { name: "GitHub", icon: <SiGithub size={28} color="#181717" /> },
-      { name: "Prettier", icon: <SiPrettier size={28} color="#F7B93E" /> },
+      {
+        name: "Git",
+        icon: <SiGit size={28} color="#F05032" />,
+        color: "#F05032",
+      },
+      {
+        name: "GitHub",
+        icon: <SiGithub size={28} color="#181717" />,
+        color: "#181717",
+      },
+      {
+        name: "Prettier",
+        icon: <SiPrettier size={28} color="#F7B93E" />,
+        color: "#F7B93E",
+      },
     ],
   },
 ];
@@ -112,16 +202,8 @@ const SkillsGroup = () => {
             {isOpen && (
               <div className="px-4 pb-4 pt-2">
                 <div className="flex flex-wrap gap-1.5">
-                  {skills.map(({ name, icon }) => (
-                    <div
-                      key={name}
-                      className="p-2 w-[68px] flex flex-col items-center rounded-md bg-white dark:bg-gray-800 shadow-sm hover:scale-120 transition-transform text-center text-inherit"
-                    >
-                      <span className="text-inherit">{icon}</span>
-                      <span className="text-[10px] font-medium mt-1 leading-tight">
-                        {name}
-                      </span>
-                    </div>
+                  {skills.map((skill) => (
+                    <SkillCard key={skill.name} {...skill} />
                   ))}
                 </div>
               </div>
