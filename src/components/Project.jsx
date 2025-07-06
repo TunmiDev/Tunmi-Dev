@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { FiGlobe } from "react-icons/fi";
+import weatherNowImage from "../assets/image.png"; // adjust the path if needed
 import {
   SiTypescript,
   SiReact,
@@ -54,7 +55,7 @@ const projects = [
   {
     title: "WeatherNow",
     description: "Real-time weather dashboard using OpenWeather API.",
-    screenshot: "/project4-screenshot.png",
+    screenshot: weatherNowImage,
     sourceUrl: "https://github.com/weathernow",
     liveUrl: "https://weathernow.com",
     logos: ["reactjs", "vite"],
@@ -95,11 +96,11 @@ const Project = () => {
             className="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg"
           >
             {/* Screenshot */}
-            <div className="bg-blue-500 p-4">
+            <div className=" p-4">
               <img
                 src={project.screenshot}
                 alt={`${project.title} Screenshot`}
-                className="rounded-md w-full"
+                className="rounded w-full"
               />
             </div>
 

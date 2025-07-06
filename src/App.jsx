@@ -5,8 +5,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Project from "./components/Project";
 import Skills from "./components/Skills";
-import { Contact } from "lucide-react";
-// import Contact from "./components/Contact";
+import Contact from "./components/Contact";
 function App() {
   const [darkMode, setDarkMode] = useState(true); // Start in dark mode
 
