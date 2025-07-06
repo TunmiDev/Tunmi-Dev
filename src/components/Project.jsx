@@ -1,7 +1,8 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { FiGlobe } from "react-icons/fi";
-import weatherNowImage from "../assets/image.png"; // adjust the path if needed
+import easybank from "../assets/easybank.png";
+import aurora from "../assets/aurora.png";
 import {
   SiTypescript,
   SiReact,
@@ -44,18 +45,18 @@ const projects = [
     stack: ["vue", "typescript", "vite", "tailwindcss", "qrcode"],
   },
   {
-    title: "Dev Portfolio",
+    title: "Aurora",
     description: "Personal portfolio showcasing frontend projects.",
-    screenshot: "/project3-screenshot.png",
+    screenshot: aurora,
     sourceUrl: "https://github.com/devportfolio",
     liveUrl: "https://portfolio.com",
     logos: ["reactjs", "tailwindcss"],
     stack: ["reactjs", "tailwindcss"],
   },
   {
-    title: "WeatherNow",
+    title: "EasyBank",
     description: "Real-time weather dashboard using OpenWeather API.",
-    screenshot: weatherNowImage,
+    screenshot: easybank,
     sourceUrl: "https://github.com/weathernow",
     liveUrl: "https://weathernow.com",
     logos: ["reactjs", "vite"],
