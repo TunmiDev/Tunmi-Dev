@@ -3,6 +3,10 @@ import { FaGithub } from "react-icons/fa";
 import { FiGlobe } from "react-icons/fi";
 import easybank from "../assets/easybank.png";
 import aurora from "../assets/aurora.png";
+import WorldClock from "../assets/WorldClock.png";
+import advice from "../assets/advice.png";
+import portfolio from "../assets/portfolio.png";
+import ule from "../assets/ule.png";
 import {
   SiTypescript,
   SiReact,
@@ -24,26 +28,44 @@ const techIcons = {
 
 // Sample projects (add your own screenshots + links)
 const projects = [
+   {
+    title: "EasyBank",
+    description: "Real-time weather dashboard using OpenWeather API.",
+    screenshot: easybank,
+    sourceUrl: "https://github.com/weathernow",
+    liveUrl: "https://weathernow.com",
+    logos: ["reactjs", "vite"],
+    stack: ["reactjs", "vite", "tailwindcss"],
+  },
+   {
+    title: "World Clock",
+    description: "Productivity task manager with drag-and-drop support.",
+    screenshot: WorldClock,
+    sourceUrl: WorldClock,
+    liveUrl: "https://taskify.com",
+    logos: ["typescript", "reactjs"],
+    stack: ["typescript", "reactjs", "tailwindcss"],
+  },
+   {
+    title: "Ule",
+    description: "Search and view healthy recipes using Edamam API.",
+    screenshot: ule,
+    sourceUrl: "https://github.com/recipefinder",
+    liveUrl: "https://recipefinder.com",
+    logos: ["reactjs"],
+    stack: ["reactjs", "tailwindcss"],
+  },
   {
-    title: "Noisekun",
+    title: "Advice Generator",
     description:
       "Relaxing sound mixer to improve productivity and reduce stress.",
-    screenshot: "/project1-screenshot.png",
+    screenshot: advice,
     sourceUrl: "https://github.com/noisekun",
     liveUrl: "https://noisekun.vercel.app",
     logos: ["typescript", "reactjs", "nextjs"],
     stack: ["typescript", "reactjs", "nextjs", "tailwindcss", "pwa"],
   },
-  {
-    title: "QR Generator",
-    description:
-      "QR code generator supporting text, URLs, wifi, and contact cards.",
-    screenshot: "/project2-screenshot.png",
-    sourceUrl: "https://github.com/qrcode",
-    liveUrl: "https://qrgen.com",
-    logos: ["vue", "typescript", "vite"],
-    stack: ["vue", "typescript", "vite", "tailwindcss", "qrcode"],
-  },
+ 
   {
     title: "Aurora",
     description: "Personal portfolio showcasing frontend projects.",
@@ -53,33 +75,17 @@ const projects = [
     logos: ["reactjs", "tailwindcss"],
     stack: ["reactjs", "tailwindcss"],
   },
-  {
-    title: "EasyBank",
-    description: "Real-time weather dashboard using OpenWeather API.",
-    screenshot: easybank,
-    sourceUrl: "https://github.com/weathernow",
-    liveUrl: "https://weathernow.com",
-    logos: ["reactjs", "vite"],
-    stack: ["reactjs", "vite", "tailwindcss"],
+   {
+    title: "Personal Portfolio",
+    description:
+      "QR code generator supporting text, URLs, wifi, and contact cards.",
+    screenshot: portfolio,
+    sourceUrl: "https://github.com/qrcode",
+    liveUrl: "https://qrgen.com",
+    logos: ["vue", "typescript", "vite"],
+    stack: ["vue", "typescript", "vite", "tailwindcss", "qrcode"],
   },
-  {
-    title: "Recipe Finder",
-    description: "Search and view healthy recipes using Edamam API.",
-    screenshot: "/project5-screenshot.png",
-    sourceUrl: "https://github.com/recipefinder",
-    liveUrl: "https://recipefinder.com",
-    logos: ["reactjs"],
-    stack: ["reactjs", "tailwindcss"],
-  },
-  {
-    title: "Taskify",
-    description: "Productivity task manager with drag-and-drop support.",
-    screenshot: "/project6-screenshot.png",
-    sourceUrl: "https://github.com/taskify",
-    liveUrl: "https://taskify.com",
-    logos: ["typescript", "reactjs"],
-    stack: ["typescript", "reactjs", "tailwindcss"],
-  },
+ 
 ];
 
 const Project = () => {
