@@ -26,16 +26,16 @@ const techIcons = {
   vite: <SiVite title="Vite" />,
 };
 
-// Sample projects (add your own screenshots + links)
+// Projects
 const projects = [
    {
     title: "EasyBank",
-    description: "Real-time weather dashboard using OpenWeather API.",
+    description: "Responsive landing page for a fictional bank, built with modern UI components.",
     screenshot: easybank,
-    sourceUrl: "https://github.com/weathernow",
-    liveUrl: "https://weathernow.com",
-    logos: ["reactjs", "vite"],
-    stack: ["reactjs", "vite", "tailwindcss"],
+    sourceUrl: "https://github.com/TunmiDev/Easy-bank",
+    liveUrl: "https://easy-bank-mu-three.vercel.app/",
+    logos: ["reactjs", "vite", "tailwindcss", "JavaScript"],
+    stack: ["reactjs", "vite", "tailwindcss", "JavaScript"],
   },
    {
     title: "World Clock",
@@ -100,7 +100,7 @@ const Project = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg"
+            className="bg-black rounded-2xl overflow-hidden shadow-lg"
           >
             {/* Screenshot */}
             <div className=" p-4">
