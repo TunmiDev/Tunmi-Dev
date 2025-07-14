@@ -47,12 +47,12 @@ const projects = [
     stack: ["vite", "reactjs", "tailwindcss", "JavaScript"],
   },
   {
-    title: "Ule",
-    description: "Search and view healthy recipes using Edamam API.",
+    title: "Loft Booking Page",
+    description:
+      "A responsive booking page for loft-style apartments, built with React and Tailwind CSS. Designed with a modern layout suitable for real estate and short-term rental platforms.",
     screenshot: ule,
-    sourceUrl: "https://github.com/recipefinder",
-    liveUrl: "https://recipefinder.com",
-    logos: ["reactjs"],
+    sourceUrl: "https://github.com/TunmiDev/loft-by-ule",
+    logos: ["reactjs", "tailwindcss"],
     stack: ["reactjs", "tailwindcss"],
   },
   {
