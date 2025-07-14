@@ -13,6 +13,7 @@ import {
   SiReact,
   SiTailwindcss,
   SiVite,
+  SiCss3,
 } from "react-icons/si";
 
 // Icon lookup
@@ -22,6 +23,7 @@ const techIcons = {
   reactjs: <SiReact title="React" color="#61DAFB" />,
   tailwindcss: <SiTailwindcss title="TailwindCSS" color="#38BDF8" />,
   vite: <SiVite title="Vite" color="#646CFF" />,
+  css: <SiCss3 title="CSS" color="#264de4" />,
 };
 
 // Projects
@@ -52,28 +54,29 @@ const projects = [
       "A responsive booking page for loft-style apartments, built with React and Tailwind CSS. Designed with a modern layout suitable for real estate and short-term rental platforms.",
     screenshot: ule,
     sourceUrl: "https://github.com/TunmiDev/loft-by-ule",
-    logos: ["reactjs", "tailwindcss"],
-    stack: ["reactjs", "tailwindcss"],
+    logos: ["reactjs", "tailwindcss", "javascript", "vite"],
+    stack: ["reactjs", "tailwindcss", "javascript", "vite"],
   },
   {
     title: "Advice Generator",
     description:
-      "Relaxing sound mixer to improve productivity and reduce stress.",
+      "Minimal advice generator app built with React. Fetches real-time advice from the Advice Slip API on user interaction, using reusable components and clean UI design.",
     screenshot: advice,
     sourceUrl: "https://github.com/noisekun",
     liveUrl: "https://noisekun.vercel.app",
-    logos: ["typescript", "reactjs", "nextjs"],
-    stack: ["typescript", "reactjs", "nextjs", "tailwindcss", "pwa"],
+    logos: ["reactjs", "javascript", "css", "vite"],
+    stack: ["reactjs", "javascript", "css", "vite"],
   },
 
   {
     title: "Aurora",
-    description: "Personal portfolio showcasing frontend projects.",
+    description:
+      "A responsive pet profile website built with React and Tailwind CSS, featuring images, a short bio, and personality highlights for a fictional bird named Aurora.",
     screenshot: aurora,
-    sourceUrl: "https://github.com/devportfolio",
-    liveUrl: "https://portfolio.com",
-    logos: ["reactjs", "tailwindcss"],
-    stack: ["reactjs", "tailwindcss"],
+    sourceUrl: "https://github.com/TunmiDev/Aurora",
+    liveUrl: "https://aurora-wheat-iota.vercel.app/",
+    logos: ["reactjs", "tailwindcss", "javascript"],
+    stack: ["reactjs", "tailwindcss", "javascript"],
   },
   {
     title: "Personal Portfolio",
