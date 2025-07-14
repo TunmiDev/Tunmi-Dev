@@ -81,12 +81,12 @@ const projects = [
   {
     title: "Personal Portfolio",
     description:
-      "QR code generator supporting text, URLs, wifi, and contact cards.",
+      "A personal portfolio website built with Vue, TypeScript, and Tailwind CSS. Showcases selected frontend projects, technical skills, and links to GitHub and socials in a clean, responsive layout.",
     screenshot: portfolio,
-    sourceUrl: "https://github.com/qrcode",
-    liveUrl: "https://qrgen.com",
-    logos: ["vue", "typescript", "vite"],
-    stack: ["vue", "typescript", "vite", "tailwindcss", "qrcode"],
+    sourceUrl: "https://github.com/TunmiDev/Tunmi-Dev",
+    liveUrl: "https://tunmi-dev-zdo5.vercel.app/",
+    logos: ["vite", "tailwindcss", "javascript", "reactjs"],
+    stack: ["vite", "tailwindcss", "javascript", "reactjs"],
   },
 ];
 
