@@ -24,28 +24,29 @@ const techIcons = {
   vite: <SiVite title="Vite" color="#646CFF" />,
 };
 
-
 // Projects
 const projects = [
-   {
-    title: "EasyBank" ,
-    description: "Responsive banking landing page built with React, JavaScript, and Tailwind CSS, a pixel-perfect implementation of a Figma design.",
+  {
+    title: "EasyBank",
+    description:
+      "Responsive banking landing page built with React, JavaScript, and Tailwind CSS, a pixel-perfect implementation of a Figma design.",
     screenshot: easybank,
     sourceUrl: "https://github.com/TunmiDev/Easy-bank",
     liveUrl: "https://easy-bank-mu-three.vercel.app/",
-    logos: ["reactjs", "vite", "tailwindcss", "javascript"],
-    stack: ["reactjs", "vite", "tailwindcss", "JavaScript"],
+    logos: ["vite", "reactjs", "tailwindcss", "javascript"],
+    stack: ["vite", "reactjs", "tailwindcss", "JavaScript"],
   },
-   {
+  {
     title: "World Clock",
-    description: "Productivity task manager with drag-and-drop support.",
+    description:
+      " A responsive World Clock app that lets users track multiple time zones in real time, featuring a clean and modern interface.",
     screenshot: WorldClock,
-    sourceUrl: WorldClock,
-    liveUrl: "https://taskify.com",
-    logos: ["typescript", "reactjs", "javascript"],
-    stack: ["typescript", "reactjs", "tailwindcss"],
+    sourceUrl: "https://github.com/TunmiDev/world-clock",
+    liveUrl: "https://world-clock-lilac.vercel.app/",
+    logos: ["vite", "reactjs", "tailwindcss", "javascript"],
+    stack: ["vite", "reactjs", "tailwindcss", "JavaScript"],
   },
-   {
+  {
     title: "Ule",
     description: "Search and view healthy recipes using Edamam API.",
     screenshot: ule,
@@ -64,7 +65,7 @@ const projects = [
     logos: ["typescript", "reactjs", "nextjs"],
     stack: ["typescript", "reactjs", "nextjs", "tailwindcss", "pwa"],
   },
- 
+
   {
     title: "Aurora",
     description: "Personal portfolio showcasing frontend projects.",
@@ -74,7 +75,7 @@ const projects = [
     logos: ["reactjs", "tailwindcss"],
     stack: ["reactjs", "tailwindcss"],
   },
-   {
+  {
     title: "Personal Portfolio",
     description:
       "QR code generator supporting text, URLs, wifi, and contact cards.",
@@ -84,7 +85,6 @@ const projects = [
     logos: ["vue", "typescript", "vite"],
     stack: ["vue", "typescript", "vite", "tailwindcss", "qrcode"],
   },
- 
 ];
 
 const Project = () => {
