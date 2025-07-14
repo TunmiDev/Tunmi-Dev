@@ -52,7 +52,7 @@ const About = () => {
               </a>
 
               <a
-                href="/Adewole_Tunmise_CV.pdf" // update this path to your actual CV
+                href="/Adewole_Tunmise_CV.pdf" //update
                 download
                 className="px-5 py-2 border-2 border-black dark:border-white text-black dark:text-white rounded-md font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
               >

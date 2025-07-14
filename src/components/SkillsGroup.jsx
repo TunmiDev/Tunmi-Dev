@@ -23,6 +23,7 @@ import {
   SiGit,
   SiGithub,
   SiPrettier,
+  SiTailwindcss,
 } from "react-icons/si";
 
 // 💡 Subcomponent: one skill card
@@ -122,6 +123,11 @@ const categories = [
       {
         name: "Photoshop",
         icon: <SiAdobephotoshop size={28} color="#31A8FF" />,
+        color: "#31A8FF",
+      },
+      {
+        name: "Tailwindcss",
+        icon: <SiTailwindcss size={28} color="#31A8FF" />,
         color: "#31A8FF",
       },
     ],

@@ -8,33 +8,32 @@ import advice from "../assets/advice.png";
 import portfolio from "../assets/portfolio.png";
 import ule from "../assets/ule.png";
 import {
+  SiJavascript,
   SiTypescript,
   SiReact,
-  SiNextdotjs,
   SiTailwindcss,
-  SiPwa,
   SiVite,
 } from "react-icons/si";
 
 // Icon lookup
 const techIcons = {
-  typescript: <SiTypescript title="TypeScript" />,
-  reactjs: <SiReact title="React" />,
-  nextjs: <SiNextdotjs title="Next.js" />,
-  tailwindcss: <SiTailwindcss title="Tailwind CSS" />,
-  pwa: <SiPwa title="PWA" />,
-  vite: <SiVite title="Vite" />,
+  javascript: <SiJavascript title="JavaScript" color="#F7DF1E" />,
+  typescript: <SiTypescript title="TypeScript" color="#3178C6" />,
+  reactjs: <SiReact title="React" color="#61DAFB" />,
+  tailwindcss: <SiTailwindcss title="TailwindCSS" color="#38BDF8" />,
+  vite: <SiVite title="Vite" color="#646CFF" />,
 };
+
 
 // Projects
 const projects = [
    {
-    title: "EasyBank",
-    description: "Responsive landing page for a fictional bank, built with modern UI components.",
+    title: "EasyBank" ,
+    description: "Responsive banking landing page built with React, JavaScript, and Tailwind CSS, a pixel-perfect implementation of a Figma design.",
     screenshot: easybank,
     sourceUrl: "https://github.com/TunmiDev/Easy-bank",
     liveUrl: "https://easy-bank-mu-three.vercel.app/",
-    logos: ["reactjs", "vite", "tailwindcss", "JavaScript"],
+    logos: ["reactjs", "vite", "tailwindcss", "javascript"],
     stack: ["reactjs", "vite", "tailwindcss", "JavaScript"],
   },
    {
@@ -43,7 +42,7 @@ const projects = [
     screenshot: WorldClock,
     sourceUrl: WorldClock,
     liveUrl: "https://taskify.com",
-    logos: ["typescript", "reactjs"],
+    logos: ["typescript", "reactjs", "javascript"],
     stack: ["typescript", "reactjs", "tailwindcss"],
   },
    {
