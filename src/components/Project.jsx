@@ -41,7 +41,7 @@ const projects = [
   {
     title: "World Clock",
     description:
-      " A responsive World Clock app that lets users track multiple time zones in real time, featuring a clean and modern interface.",
+      "A responsive World Clock app that lets users track multiple time zones in real time, featuring a clean and modern interface.",
     screenshot: WorldClock,
     sourceUrl: "https://github.com/TunmiDev/world-clock",
     liveUrl: "https://world-clock-lilac.vercel.app/",
@@ -67,7 +67,6 @@ const projects = [
     logos: ["reactjs", "javascript", "css", "vite"],
     stack: ["reactjs", "javascript", "css", "vite"],
   },
-
   {
     title: "Aurora",
     description:
@@ -93,7 +92,7 @@ const projects = [
 const Project = () => {
   return (
     <section id="projects" className="py-20 px-6 max-w-6xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-white">
+      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-black dark:text-white">
         Projects
       </h2>
 
@@ -102,10 +101,10 @@ const Project = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-black rounded-2xl overflow-hidden shadow-lg"
+            className="rounded-2xl overflow-hidden shadow-lg bg-white/10 backdrop-blur-md border border-white/20 dark:bg-white/5 dark:border-white/10 transition-all duration-300"
           >
             {/* Screenshot */}
-            <div className=" p-4">
+            <div className="p-4">
               <img
                 src={project.screenshot}
                 alt={`${project.title} Screenshot`}
@@ -114,7 +113,7 @@ const Project = () => {
             </div>
 
             {/* Details */}
-            <div className="p-6 text-white flex flex-col gap-4">
+            <div className="p-6 text-black dark:text-white flex flex-col gap-4">
               {/* Title + logos */}
               <div className="flex items-center gap-3 flex-wrap">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
@@ -126,14 +125,16 @@ const Project = () => {
               </div>
 
               {/* Description */}
-              <p className="text-sm text-gray-300">{project.description}</p>
+              <p className="text-sm text-black dark:text-gray-300">
+                {project.description}
+              </p>
 
               {/* Tech badges */}
               <div className="flex flex-wrap gap-2">
                 {project.stack.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="bg-zinc-800 px-2 py-1 rounded-full text-xs capitalize"
+                    className="bg-gray-200 text-black dark:bg-zinc-800 dark:text-white px-2 py-1 rounded-full text-xs capitalize"
                   >
                     {tech}
                   </span>
@@ -141,23 +142,29 @@ const Project = () => {
               </div>
 
               {/* Buttons */}
-              <div className="flex gap-4 mt-4">
+              {/* Buttons */}
+              <div className="flex justify-center gap-4 mt-6 text-center">
                 <a
                   href={project.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-zinc-800 px-4 py-2 rounded-lg flex items-center gap-2 text-sm hover:bg-zinc-700"
+                  className="group bg-zinc-200 px-4 py-2 rounded-lg flex items-center gap-2 text-sm hover:bg-black hover:text-white transition"
                 >
-                  <FaGithub /> Source
+                  <FaGithub className="text-lg text-gray-500 group-hover:text-white group-hover:animate-bounce transition" />
+                  Source
                 </a>
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-600 px-4 py-2 rounded-lg flex items-center gap-2 text-sm hover:bg-blue-500"
-                >
-                  <FiGlobe /> Website
-                </a>
+
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-blue-100 px-4 py-2 rounded-lg flex items-center gap-2 text-sm hover:bg-blue-600 text-blue-900 hover:text-white transition"
+                  >
+                    <FiGlobe className="text-lg text-blue-300 group-hover:text-white group-hover:animate-bounce transition" />
+                    Website
+                  </a>
+                )}
               </div>
             </div>
           </div>
