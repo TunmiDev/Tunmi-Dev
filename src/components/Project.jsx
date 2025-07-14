@@ -142,13 +142,12 @@ const Project = () => {
               </div>
 
               {/* Buttons */}
-              {/* Buttons */}
               <div className="flex justify-center gap-4 mt-6 text-center">
                 <a
                   href={project.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-zinc-200 px-4 py-2 rounded-lg flex items-center gap-2 text-sm hover:bg-black hover:text-white transition"
+                  className="group bg-zinc-200 px-4 py-4 rounded-2xl flex items-center gap-2 text-sm hover:bg-black hover:text-white transition"
                 >
                   <FaGithub className="text-lg text-gray-500 group-hover:text-white group-hover:animate-bounce transition" />
                   Source
@@ -159,7 +158,7 @@ const Project = () => {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group bg-blue-100 px-4 py-2 rounded-lg flex items-center gap-2 text-sm hover:bg-blue-600 text-blue-900 hover:text-white transition"
+                    className="group bg-blue-100 px-4 py-4 rounded-2xl flex items-center gap-2 text-sm hover:bg-blue-600 text-blue-900 hover:text-white transition"
                   >
                     <FiGlobe className="text-lg text-blue-300 group-hover:text-white group-hover:animate-bounce transition" />
                     Website
