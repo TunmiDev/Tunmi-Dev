@@ -66,7 +66,7 @@ function Navbar() {
             hoverColor="hover:text-[#0077B5]"
           />
           <SocialIcon
-            href="mailto:tunmidev@example.com"
+            href="mailto:adewoleoluwatunmise"
             icon={FaEnvelope}
             label="Email"
             hoverColor="hover:text-red-600 dark:hover:text-red-400"
