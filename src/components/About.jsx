@@ -24,25 +24,32 @@ const About = () => {
           </div>
 
           {/* Text */}
-          <div className="w-full md:w-2/3 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+          <div className="w-full md:w-2/3 text-lg leading-relaxed text-gray-700 dark:text-gray-300 mt-12">
             <p>
-              Hey there! I’m{" "}
-              <span className="font-semibold">Adewole Oluwatunmise</span>, a
-              frontend developer who’s obsessed with building smooth,
-              responsive, and beautiful interfaces.
+              Hi, I’m{" "}
+              <span className="font-semibold text-black dark:text-white">
+                Oluwatunmise Adewole
+              </span>
+              , a creative frontend developer passionate about building clean,
+              modern, and responsive user interfaces that leave a lasting
+              impression.
             </p>
             <p className="mt-4">
-              I work with tools like{" "}
+              I thrive on transforming ideas and designs into smooth,
+              interactive web experiences using tools like{" "}
               <span className="font-semibold">React, Tailwind CSS,</span> and{" "}
-              <span className="font-semibold">JavaScript</span> to bring designs
-              to life and ensure users have a seamless experience across every
-              screen.
+              <span className="font-semibold">JavaScript</span>. I’m constantly
+              exploring new trends and techniques to improve performance,
+              accessibility, and user experience.
             </p>
             <p className="mt-4">
-              When I’m not coding, I’m learning something new, working on fun
-              side projects, or catching up on creative trends. I love turning
-              ideas into clean, functional UI.
+              Beyond coding, I’m driven by curiosity—whether it’s learning new
+              tools, experimenting with side projects, or staying updated with
+              tech news. My goal is to create digital products that are both
+              functional and visually stunning, while collaborating on
+              meaningful projects.
             </p>
+
             <div className="mt-6 flex gap-4 flex-wrap">
               <a
                 href="#contact"
