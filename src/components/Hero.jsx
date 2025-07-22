@@ -1,13 +1,14 @@
 import React from "react";
 import Profile1 from "../assets/Profile1.jpg";
 import Profile2 from "../assets/Profile2.jpg";
+import FrontendAnimation from "./FrontendAnimation";
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-black dark:text-white px-6 py-10 relative transition-all duration-300">
       {/* Title */}
       <h1 className="text-center text-4xl md:text-6xl font-extrabold leading-tight">
-        FRONTEND
+        <FrontendAnimation />
         <br />
         DEVELOPER.
       </h1>
