@@ -8,22 +8,23 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-black dark:text-white px-6 py-10 relative transition-all duration-300">
       {/* Title */}
-      <TypeAnimation
-        sequence={[
-          "FRONTEND DEVELOPER.",
-          2000,
-          "REACT DEVELOPER.",
-          2000,
-          "WEB DESIGNER.",
-          2000,
-          "JAVASCRIPT ENTHUSIAST.",
-          2000,
-        ]}
-        wrapper="h1"
-        speed={50}
-        className="text-center text-4xl md:text-6xl font-extrabold leading-tight"
-        repeat={Infinity}
-      />
+      <h1 className="text-center text-4xl md:text-6xl font-extrabold leading-tight flex flex-col items-center">
+        <TypeAnimation
+          sequence={[
+            "FRONTEND", // type first line
+            1000, // wait 1s
+            "FRONTEND\nDEVELOPER.", // add second line
+            2000, // wait 2s with both lines visible
+            "", // clear everything
+            1000, // wait before starting again
+          ]}
+          wrapper="span"
+          speed={50}
+          cursor={false}
+          repeat={Infinity}
+          className="whitespace-pre-line text-center"
+        />
+      </h1>
 
       {/* Subtitle */}
       <p className="text-center text-sm md:text-base mt-2 uppercase tracking-widest text-gray-500 dark:text-gray-400">
