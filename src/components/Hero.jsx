@@ -38,7 +38,7 @@ const Hero = () => {
           <span className="text-3xl md:text-4xl font-medium">OLUWATUNMISE</span>
         </div>
         {/* Bio on the right */}
-        <div className="absolute -right-70 top-58 transform -translate-y-1/2 w-64 text-left text-sm md:text-base font-light leading-relaxed text-gray-700 dark:text-gray-300">
+        <div className="absolute -right-70 top-58 transform -translate-y-1/2 w-64 text-left text-sm md:text-base font-light leading-relaxed text-gray-800 dark:text-gray-300">
           <p>
             A Passionate frontend developer with a love for crafting
             pixel-perfect interfaces and seamless web experiences. Always
