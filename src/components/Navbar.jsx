@@ -60,7 +60,7 @@ function Navbar() {
             hoverColor="hover:text-gray-800 dark:hover:text-gray-300"
           />
           <SocialIcon
-            href="https://linkedin.com/in/tunmidev"
+            href="www.linkedin.com/in/oluwatunmiseadewole"
             icon={FaLinkedin}
             label="LinkedIn"
             hoverColor="hover:text-[#0077B5]"
