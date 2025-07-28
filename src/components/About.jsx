@@ -59,8 +59,8 @@ const About = () => {
               </a>
 
               <a
-                href="/Adewole_Tunmise_CV.pdf" //update
-                download
+                href="/Adewole-Oluwatunmise-CV.pdf"
+                download="Adewole-Oluwatunmise-CV.pdf"
                 className="px-5 py-2 border-2 border-black dark:border-white text-black dark:text-white rounded-md font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
               >
                 Download CV
