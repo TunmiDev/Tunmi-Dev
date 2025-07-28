@@ -1,17 +1,29 @@
 import React from "react";
+import { TypeAnimation } from "react-type-animation";
 import Profile1 from "../assets/Profile1.jpg";
 import Profile2 from "../assets/Profile2.jpg";
-import FrontendAnimation from "./FrontendAnimation";
+// import FrontendAnimation from "./FrontendAnimation";
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-black dark:text-white px-6 py-10 relative transition-all duration-300">
       {/* Title */}
-      <h1 className="text-center text-4xl md:text-6xl font-extrabold leading-tight">
-        <FrontendAnimation />
-        <br />
-        DEVELOPER.
-      </h1>
+      <TypeAnimation
+        sequence={[
+          "FRONTEND DEVELOPER.",
+          2000,
+          "REACT DEVELOPER.",
+          2000,
+          "WEB DESIGNER.",
+          2000,
+          "JAVASCRIPT ENTHUSIAST.",
+          2000,
+        ]}
+        wrapper="h1"
+        speed={50}
+        className="text-center text-4xl md:text-6xl font-extrabold leading-tight"
+        repeat={Infinity}
+      />
 
       {/* Subtitle */}
       <p className="text-center text-sm md:text-base mt-2 uppercase tracking-widest text-gray-500 dark:text-gray-400">
