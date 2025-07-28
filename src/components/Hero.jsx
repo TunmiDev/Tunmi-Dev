@@ -2,7 +2,6 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Profile1 from "../assets/Profile1.jpg";
 import Profile2 from "../assets/Profile2.jpg";
-// import FrontendAnimation from "./FrontendAnimation";
 
 const Hero = () => {
   return (
@@ -28,7 +27,7 @@ const Hero = () => {
 
       {/* Subtitle */}
       <p className="text-center text-sm md:text-base mt-2 uppercase tracking-widest text-gray-500 dark:text-gray-400">
-        Crafting interactive user experiences • Building clean UI
+        Clean code • Sleek design • Memorable experiences
       </p>
 
       {/* Image + Name container */}
@@ -39,11 +38,11 @@ const Hero = () => {
           <span className="text-3xl md:text-4xl font-medium">OLUWATUNMISE</span>
         </div>
         {/* Bio on the right */}
-        <div className="absolute -right-96 top-58 transform -translate-y-1/2 w-64 text-left text-sm md:text-base font-light leading-relaxed text-gray-700 dark:text-gray-300">
+        <div className="absolute -right-70 top-58 transform -translate-y-1/2 w-64 text-left text-sm md:text-base font-light leading-relaxed text-gray-700 dark:text-gray-300">
           <p>
-            Passionate frontend developer with a love for crafting pixel-perfect
-            interfaces and seamless web experiences. Always learning, always
-            building.
+            A Passionate frontend developer with a love for crafting
+            pixel-perfect interfaces and seamless web experiences. Always
+            learning, always building.
           </p>
         </div>
         {/*Stacked Images */}
