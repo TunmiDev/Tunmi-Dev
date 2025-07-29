@@ -111,6 +111,9 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      <footer className="text-center text-sm text-gray-500 dark:text-gray-400 py-6">
+        © {new Date().getFullYear()} TunmiDev. All rights reserved.
+      </footer>
     </section>
   );
 };
