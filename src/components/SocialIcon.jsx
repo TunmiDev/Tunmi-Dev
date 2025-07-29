@@ -1,12 +1,14 @@
 import React from "react";
 
 const SocialIcon = ({ href, icon: Icon, label, hoverColor }) => {
+  const isExternal = href.startsWith("http");
+
   return (
     <div className="relative group">
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
         className={`transition-colors duration-200 ${hoverColor}`}
         aria-label={label}
       >
