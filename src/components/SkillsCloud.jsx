@@ -26,7 +26,7 @@ const slugs = [
 ];
 
 // 🔧 Hook to fetch and render icons
-const useIcons = (slugs) => {
+const useIcons = (slugs, isDarkMode) => {
   const [icons, setIcons] = React.useState(null);
 
   React.useEffect(() => {
@@ -48,6 +48,7 @@ const useIcons = (slugs) => {
     renderSimpleIcon({
       icon,
       size: 42,
+      color: isDarkMode ? "#ffffff" : undefined, // White for dark mode, default brand color otherwise
       aProps: {
         href: "#",
         onClick: (e) => e.preventDefault(),
@@ -77,7 +78,7 @@ const StaticSkillList = () => (
     {slugs.map((tech) => (
       <div
         key={tech}
-        className=" py-2 px-4 rounded-lg text-center shadow-md hover:scale-105 transition-transform"
+        className="py-2 px-4 rounded-lg text-center shadow-md hover:scale-105 transition-transform"
       >
         {tech.toUpperCase()}
       </div>
@@ -86,11 +87,23 @@ const StaticSkillList = () => (
 );
 
 // 💼 Full Skills Section Component
-const Skills = () => {
-  const icons = useIcons(slugs);
+const SkillsCloud = () => {
+  const [isDarkMode, setIsDarkMode] = React.useState(false);
+
+  React.useEffect(() => {
+    const match = window.matchMedia("(prefers-color-scheme: dark)");
+    setIsDarkMode(match.matches);
+
+    const handleChange = (e) => setIsDarkMode(e.matches);
+    match.addEventListener("change", handleChange);
+
+    return () => match.removeEventListener("change", handleChange);
+  }, []);
+
+  const icons = useIcons(slugs, isDarkMode);
 
   return (
-    <section id="skills" className="py-16  text-white">
+    <section id="skills" className="py-16 text-white">
       {/* 3D Cloud on large screens */}
       <div className="hidden md:flex justify-center">
         <div className="h-[500px] w-full flex justify-center items-center">
@@ -106,4 +119,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default SkillsCloud;
