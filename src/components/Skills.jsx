@@ -8,7 +8,7 @@ const Skills = () => {
     <section id="skills" className="py-16 pt-10 pb-16  dark:text-white">
       <div className="container mx-auto px-6 md:flex md:space-x-10 items-start">
         {/* Left: 3D Skills Cloud */}
-        <div className="hidden md:flex w-1/2 justify-center items-center">
+        <div className="w-full md:w-1/2 justify-center items-center flex mb-10 md:mb-0">
           <SkillsCloud />
         </div>
 

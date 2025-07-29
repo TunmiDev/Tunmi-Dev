@@ -26,7 +26,7 @@ const slugs = [
 ];
 
 // 🔧 Hook to fetch and render icons
-const useIcons = (slugs, isDarkMode) => {
+const useIcons = (slugs) => {
   const [icons, setIcons] = React.useState(null);
 
   React.useEffect(() => {
@@ -48,7 +48,6 @@ const useIcons = (slugs, isDarkMode) => {
     renderSimpleIcon({
       icon,
       size: 42,
-      color: isDarkMode ? "#ffffff" : undefined, // White for dark mode, default brand color otherwise
       aProps: {
         href: "#",
         onClick: (e) => e.preventDefault(),
@@ -88,35 +87,16 @@ const StaticSkillList = () => (
 
 // 💼 Full Skills Section Component
 const SkillsCloud = () => {
-  const [isDarkMode, setIsDarkMode] = React.useState(false);
-
-  React.useEffect(() => {
-    const match = window.matchMedia("(prefers-color-scheme: dark)");
-    setIsDarkMode(match.matches);
-
-    const handleChange = (e) => setIsDarkMode(e.matches);
-    match.addEventListener("change", handleChange);
-
-    return () => match.removeEventListener("change", handleChange);
-  }, []);
-
-  const icons = useIcons(slugs, isDarkMode);
-
+  const icons = useIcons(slugs);
   return (
     <section id="skills" className="py-16 text-white">
-      {/* 3D Cloud on large screens */}
-      <div className="hidden md:flex justify-center">
+      {/* 3D Cloud on all screens */}
+      <div className="flex justify-center">
         <div className="h-[500px] w-full flex justify-center items-center">
           <Cloud {...cloudProps}>{icons}</Cloud>
         </div>
       </div>
-
-      {/* Static grid list on mobile */}
-      <div className="block md:hidden mt-10 px-6">
-        <StaticSkillList />
-      </div>
     </section>
   );
 };
-
 export default SkillsCloud;
