@@ -122,6 +122,7 @@ function Navbar() {
             {/* Logo */}
             <div className="text-xl font-bold italic font-serif mb-4">
               Tunmidev
+              <hr className="border-gray-400 dark:border-white" />
             </div>
 
             {/* Links */}
@@ -150,6 +151,10 @@ function Navbar() {
                   Contact
                 </a>
               </li>
+              <div>
+                {" "}
+                <hr className="border-gray-400 dark:border-white" />
+              </div>
               <li className="flex items-center gap-3 cursor-pointer">
                 <FaLinkedin />
                 <a
