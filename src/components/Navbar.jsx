@@ -141,7 +141,8 @@ function Navbar() {
               ].map(({ icon, label, href }) => (
                 <li
                   key={label}
-                  className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition cursor-pointer hover:text-blue-500 dark:hover:text-blue-500"
+                  className="flex items-center gap-3 px-3 py-2 rounded-md  hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer hover:scale-110 transform transition duration-300
+"
                 >
                   {icon}
                   <a href={href} onClick={() => setIsOpen(false)}>
@@ -154,7 +155,10 @@ function Navbar() {
               <hr className="my-3 border-gray-400 dark:border-white" />
 
               {/* Social Links */}
-              <li className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition cursor-pointer hover:text-blue-500 dark:hover:text-blue-500">
+              <li
+                className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer  hover:scale-110 transform transition duration-300
+"
+              >
                 <FaLinkedin />
                 <a
                   href="https://www.linkedin.com/in/oluwatunmiseadewole"
@@ -164,7 +168,10 @@ function Navbar() {
                   LinkedIn
                 </a>
               </li>
-              <li className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition cursor-pointer hover:text-blue-500 dark:hover:text-blue-500">
+              <li
+                className="flex items-center gap-3 px-3 py-2 rounded-md  hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer hover:scale-110 transform transition duration-300
+"
+              >
                 <FaGithub />
                 <a
                   href="https://github.com/tunmidev"
