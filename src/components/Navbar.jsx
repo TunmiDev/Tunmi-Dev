@@ -7,11 +7,10 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
-import SocialIcon from "./SocialIcon";
 
 function Navbar() {
   const [theme, setTheme] = useState("light");
-  const [isOpen, setIsOpen] = useState(false); // Mobile menu toggle
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
@@ -29,8 +28,9 @@ function Navbar() {
   };
 
   return (
-    <nav className="w-full px-6 py-3 bg-white dark:bg-black text-black dark:text-white transition-all duration-300 fixed z-50 top-0 left-0 ">
+    <nav className="w-full px-6 py-3 bg-white dark:bg-black text-black dark:text-white transition-all duration-300 fixed z-50 top-0 left-0">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
+        {/* Logo */}
         <div className="text-xl font-bold italic font-serif">Tunmidev</div>
 
         {/* Desktop Links */}
@@ -50,75 +50,98 @@ function Navbar() {
           </li>
         </ul>
 
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
-
-        {/* Socials + Theme toggle */}
-        <div className="hidden md:flex items-center gap-4">
-          <p className="text-xs text-gray-500 dark:text-gray-300 italic">
+        {/* Social + Theme toggle + Mobile menu button */}
+        <div className="flex items-center gap-4 text-sm">
+          <p className="hidden md:block text-xs text-gray-500 dark:text-gray-300 italic">
             Software Engineer | Frontend Dev
           </p>
-          <SocialIcon
+
+          <a
             href="https://github.com/tunmidev"
-            icon={FaGithub}
-            label="GitHub"
-            hoverColor="hover:text-gray-800 dark:hover:text-gray-300"
-          />
-          <SocialIcon
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-800 dark:hover:text-gray-300"
+          >
+            <FaGithub />
+          </a>
+          <a
             href="https://www.linkedin.com/in/oluwatunmiseadewole"
-            icon={FaLinkedin}
-            label="LinkedIn"
-            hoverColor="hover:text-blue-600 dark:hover:text-blue-400"
-          />
-          <button onClick={toggleTheme}>
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            <FaLinkedin />
+          </a>
+
+          <button onClick={toggleTheme} className="text-lg">
             {theme === "dark" ? <FaSun /> : <FaMoon />}
           </button>
+
+          {/* Mobile menu toggle button */}
+          <div className="md:hidden ml-2">
+            <button onClick={() => setIsOpen(!isOpen)}>
+              {isOpen ? <FaTimes /> : <FaBars />}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="md:hidden flex flex-col items-end text-right mt-4 space-y-3 font-serif pr-2">
-          <li>
-            <a href="#about" onClick={() => setIsOpen(false)}>
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#projects" onClick={() => setIsOpen(false)}>
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#skills" onClick={() => setIsOpen(false)}>
-              Skills
-            </a>
-          </li>
-          <li>
-            <a href="#contact" onClick={() => setIsOpen(false)}>
-              Contact
-            </a>
-          </li>
-          <li className="flex gap-4 mt-4">
-            <SocialIcon
-              href="https://github.com/tunmidev"
-              icon={FaGithub}
-              label="GitHub"
-            />
-            <SocialIcon
-              href="https://www.linkedin.com/in/oluwatunmiseadewole"
-              icon={FaLinkedin}
-              label="LinkedIn"
-            />
-            <button onClick={toggleTheme}>
-              {theme === "dark" ? <FaSun /> : <FaMoon />}
-            </button>
-          </li>
-        </ul>
+        <div className="md:hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-end">
+          <div className="w-64 bg-white dark:bg-zinc-900 h-full shadow-lg p-5 text-black dark:text-white relative flex flex-col justify-between">
+            {/* Top section */}
+            <div>
+              {/* Close button */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-4 right-4 text-xl"
+              >
+                <FaTimes />
+              </button>
+
+              {/* Logo */}
+              <div className="text-lg font-bold mb-6">
+                <div className="text-xl font-bold italic font-serif">
+                  Tunmidev
+                </div>
+              </div>
+
+              {/* Links */}
+              <ul className="space-y-5 text-sm ">
+                <li className="flex items-center gap-3 cursor-pointer">
+                  <a href="#about">About me</a>
+                </li>
+                <li className="flex items-center gap-3 cursor-pointer">
+                  <a href="#projects">Projects</a>
+                </li>
+                <li className="flex items-center gap-3 cursor-pointer">
+                  <a href="#gallery">Gallery</a>
+                </li>
+                <li className="flex items-center gap-3 cursor-pointer">
+                  <FaLinkedin />
+                  <a
+                    href="https://www.linkedin.com/in/oluwatunmiseadewole"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li className="flex items-center gap-3 cursor-pointer">
+                  <FaGithub />
+                  <a
+                    href="https://github.com/tunmidev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       )}
     </nav>
   );
