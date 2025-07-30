@@ -7,19 +7,12 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-black dark:text-white px-6 py-10 relative transition-all duration-300"
+      className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-black dark:text-white px-6 py-10 transition-all duration-300"
     >
       {/* Title */}
-      <h1 className="text-center text-4xl md:text-6xl font-extrabold leading-tight flex flex-col items-center">
+      <h1 className="text-center text-4xl md:text-6xl font-extrabold leading-tight">
         <TypeAnimation
-          sequence={[
-            "FRONTEND", // type first line
-            1000, // wait 1s
-            "FRONTEND\nDEVELOPER.", // add second line
-            2000, // wait 2s with both lines visible
-            "", // clear everything
-            1000, // wait before starting again
-          ]}
+          sequence={["FRONTEND", 1000, "FRONTEND\nDEVELOPER.", 2000, "", 1000]}
           wrapper="span"
           speed={50}
           cursor={false}
@@ -33,36 +26,37 @@ const Hero = () => {
         Clean code • Sleek design • Memorable experiences
       </p>
 
-      {/* Image + Name container */}
-      <div className="relative mt-14 w-[280px] h-[360px] flex justify-center items-center">
-        {/* Name on the left side of the image */}
-        <div className="absolute -left-96 top-36 transform -translate-y-1/2 flex flex-col text-left tracking-widest font-serif">
-          <span className="text-1xl md:text-2xl font-medium">ADEWOLE</span>
-          <span className="text-3xl md:text-4xl font-medium">OLUWATUNMISE</span>
+      {/* Hero Content */}
+      <div className="relative mt-10 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-20 w-full max-w-5xl px-4">
+        {/* Name */}
+        <div className="text-center md:text-left md:w-1/3 tracking-widest font-serif">
+          <span className="block text-xl md:text-2xl font-medium">ADEWOLE</span>
+          <span className="block text-3xl md:text-4xl font-medium">
+            OLUWATUNMISE
+          </span>
         </div>
-        {/* Bio on the right */}
-        <div className="absolute -right-70 top-58 transform -translate-y-1/2 w-64 text-left text-sm md:text-base font-light leading-relaxed text-gray-800 dark:text-gray-300">
+
+        {/* Image Stack */}
+        <div className="relative w-[220px] h-[280px] md:w-[260px] md:h-[340px]">
+          <img
+            src={Profile1}
+            alt="Profile 1"
+            className="absolute top-4 left-10 w-[75%] h-[80%] object-cover grayscale shadow-lg rounded-md border-2 border-white dark:border-black z-30"
+          />
+          <img
+            src={Profile2}
+            alt="Profile 2"
+            className="absolute top-16 left-0 w-[75%] h-[80%] object-cover grayscale shadow-md rounded-md border-2 border-white dark:border-black z-20"
+          />
+        </div>
+
+        {/* Bio */}
+        <div className="text-center md:text-left md:w-1/3 text-sm md:text-base leading-relaxed text-gray-800 dark:text-gray-300">
           <p>
-            A Passionate frontend developer with a love for crafting
+            A passionate frontend developer with a love for crafting
             pixel-perfect interfaces and seamless web experiences. Always
             learning, always building.
           </p>
-        </div>
-        {/*Stacked Images */}
-        <div className="relative w-[260px] h-[340px] mx-auto">
-          {/* First Image - lower and to the left */}
-          <img
-            src={Profile1}
-            alt="Profile 2"
-            className="absolute top-4 left-12 w-[75%] h-[80%] object-cover  grayscale shadow-lg rounded-md border-2 border-white dark:border-black z-30"
-          />
-
-          {/* Second Image - higher and to the right */}
-          <img
-            src={Profile2}
-            alt="Profile 1"
-            className="absolute top-16 left-0 w-[75%] h-[80%] object-cover grayscale shadow-md rounded-md border-2 border-white dark:border-black z-20"
-          />
         </div>
       </div>
     </section>
