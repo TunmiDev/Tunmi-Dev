@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   FaGithub,
   FaLinkedin,
@@ -6,11 +6,17 @@ import {
   FaSun,
   FaBars,
   FaTimes,
+  FaUser,
+  FaFolderOpen,
+  FaTools,
+  FaEnvelope,
 } from "react-icons/fa";
 
 function Navbar() {
   const [theme, setTheme] = useState("light");
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+  const toggleRef = useRef(null);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
@@ -27,6 +33,24 @@ function Navbar() {
     localStorage.setItem("theme", newTheme);
   };
 
+  // Handle click outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        isOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        toggleRef.current &&
+        !toggleRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
+
   return (
     <nav className="w-full px-6 py-3 bg-white dark:bg-black text-black dark:text-white transition-all duration-300 fixed z-50 top-0 left-0">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
@@ -35,7 +59,9 @@ function Navbar() {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-6 text-sm font-serif ml-40">
-          <li className="font-semibold cursor-pointer">Home</li>
+          <li className="font-semibold cursor-pointer">
+            <a href="#">Home</a>
+          </li>
           <li className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">
             <a href="#about">About</a>
           </li>
@@ -50,7 +76,7 @@ function Navbar() {
           </li>
         </ul>
 
-        {/* Social + Theme toggle + Mobile menu button */}
+        {/* Right icons */}
         <div className="flex items-center gap-4 text-sm">
           <p className="hidden md:block text-xs text-gray-500 dark:text-gray-300 italic">
             Software Engineer | Frontend Dev
@@ -77,8 +103,8 @@ function Navbar() {
             {theme === "dark" ? <FaSun /> : <FaMoon />}
           </button>
 
-          {/* Mobile menu toggle button */}
-          <div className="md:hidden ml-2">
+          {/* Mobile menu toggle */}
+          <div className="md:hidden ml-2" ref={toggleRef}>
             <button onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <FaTimes /> : <FaBars />}
             </button>
@@ -86,60 +112,65 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-end">
-          <div className="w-64 bg-white dark:bg-zinc-900 h-full shadow-lg p-5 text-black dark:text-white relative flex flex-col justify-between">
-            {/* Top section */}
-            <div>
-              {/* Close button */}
-              <button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-4 right-4 text-xl"
-              >
-                <FaTimes />
-              </button>
-
-              {/* Logo */}
-              <div className="text-lg font-bold mb-6">
-                <div className="text-xl font-bold italic font-serif">
-                  Tunmidev
-                </div>
-              </div>
-
-              {/* Links */}
-              <ul className="space-y-5 text-sm ">
-                <li className="flex items-center gap-3 cursor-pointer">
-                  <a href="#about">About me</a>
-                </li>
-                <li className="flex items-center gap-3 cursor-pointer">
-                  <a href="#projects">Projects</a>
-                </li>
-                <li className="flex items-center gap-3 cursor-pointer">
-                  <a href="#gallery">Gallery</a>
-                </li>
-                <li className="flex items-center gap-3 cursor-pointer">
-                  <FaLinkedin />
-                  <a
-                    href="https://www.linkedin.com/in/oluwatunmiseadewole"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    LinkedIn
-                  </a>
-                </li>
-                <li className="flex items-center gap-3 cursor-pointer">
-                  <FaGithub />
-                  <a
-                    href="https://github.com/tunmidev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    GitHub
-                  </a>
-                </li>
-              </ul>
+        <div className="md:hidden absolute top-full right-6 z-40">
+          <div
+            ref={menuRef}
+            className="w-64 bg-white dark:bg-zinc-900 shadow-lg p-5 rounded-xl text-black dark:text-white flex flex-col"
+          >
+            {/* Logo */}
+            <div className="text-xl font-bold italic font-serif mb-4">
+              Tunmidev
             </div>
+
+            {/* Links */}
+            <ul className="space-y-4 text-sm font-serif">
+              <li className="flex items-center gap-3 cursor-pointer">
+                <FaUser />
+                <a href="#about" onClick={() => setIsOpen(false)}>
+                  About Me
+                </a>
+              </li>
+              <li className="flex items-center gap-3 cursor-pointer">
+                <FaFolderOpen />
+                <a href="#projects" onClick={() => setIsOpen(false)}>
+                  Projects
+                </a>
+              </li>
+              <li className="flex items-center gap-3 cursor-pointer">
+                <FaTools />
+                <a href="#skills" onClick={() => setIsOpen(false)}>
+                  Skills
+                </a>
+              </li>
+              <li className="flex items-center gap-3 cursor-pointer">
+                <FaEnvelope />
+                <a href="#contact" onClick={() => setIsOpen(false)}>
+                  Contact
+                </a>
+              </li>
+              <li className="flex items-center gap-3 cursor-pointer">
+                <FaLinkedin />
+                <a
+                  href="https://www.linkedin.com/in/oluwatunmiseadewole"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li className="flex items-center gap-3 cursor-pointer">
+                <FaGithub />
+                <a
+                  href="https://github.com/tunmidev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       )}
