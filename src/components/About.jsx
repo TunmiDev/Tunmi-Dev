@@ -17,7 +17,7 @@ const About = () => {
           <img
             src={Profile2}
             alt="Oluwatunmise"
-            className="rounded-2xl w-[70%] max-w-[250px] aspect-[3/4] object-cover shadow-lg hover:grayscale-0 transition duration-500"
+            className="rounded-2xl w-full max-w-[250px] h-auto object-cover shadow-lg transition duration-500"
           />
         </div>
 
