@@ -135,39 +135,44 @@ function Navbar() {
                 { icon: <FaTools />, label: "Skills", href: "#skills" },
                 { icon: <FaEnvelope />, label: "Contact", href: "#contact" },
               ].map(({ icon, label, href }) => (
-                <li
+                <a
                   key={label}
-                  className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer transform hover:scale-105 transition duration-200"
+                  href={href}
+                  onClick={() => setIsOpen(false)}
+                  className="block"
                 >
-                  {icon}
-                  <a href={href} onClick={() => setIsOpen(false)}>
-                    {label}
-                  </a>
-                </li>
+                  <li className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer transform hover:scale-105 transition duration-200">
+                    {icon}
+                    <span>{label}</span>
+                  </li>
+                </a>
               ))}
 
               <hr className="my-3 border-gray-400 dark:border-white" />
 
-              <li className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer transform hover:scale-105 transition duration-200">
-                <FaLinkedin />
-                <a
-                  href="https://www.linkedin.com/in/oluwatunmiseadewole"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer transform hover:scale-105 transition duration-200">
-                <FaGithub />
-                <a
-                  href="https://github.com/tunmidev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
-              </li>
+              <a
+                href="https://www.linkedin.com/in/oluwatunmiseadewole"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <li className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer transform hover:scale-105 transition duration-200">
+                  <FaLinkedin />
+                  <span>LinkedIn</span>
+                </li>
+              </a>
+
+              <a
+                href="https://github.com/tunmidev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <li className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer transform hover:scale-105 transition duration-200">
+                  <FaGithub />
+                  <span>GitHub</span>
+                </li>
+              </a>
             </ul>
           </div>
         </div>
