@@ -10,7 +10,7 @@ const Hero = () => {
       className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-black dark:text-white px-6 py-10 transition-all duration-300"
     >
       {/* Title */}
-      <h1 className="text-center text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mt-20 sm:mt-0">
+      <h1 className="text-center text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mt-12 sm:mt-0">
         <TypeAnimation
           sequence={["FRONTEND", 1000, "FRONTEND\nDEVELOPER.", 2000, "", 1000]}
           wrapper="span"
