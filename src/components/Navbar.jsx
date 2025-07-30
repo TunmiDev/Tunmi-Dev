@@ -59,7 +59,7 @@ function Navbar() {
         {/* Show nav links from sm and up */}
         <ul className="hidden sm:flex gap-6 text-sm font-serif ml-6 md:ml-10 lg:ml-20">
           <li className="font-semibold cursor-pointer">
-            <a href="#">Home</a>
+            <a href="#hero">Home</a>
           </li>
           <li className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">
             <a href="#about">About</a>
