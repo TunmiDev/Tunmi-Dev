@@ -10,6 +10,7 @@ import {
   FaFolderOpen,
   FaTools,
   FaEnvelope,
+  FaHome,
 } from "react-icons/fa";
 
 function Navbar() {
@@ -33,7 +34,7 @@ function Navbar() {
     localStorage.setItem("theme", newTheme);
   };
 
-  // Handle click outside
+  // Handle click outside dropdown
   useEffect(() => {
     function handleClickOutside(event) {
       if (
@@ -122,40 +123,38 @@ function Navbar() {
             {/* Logo */}
             <div className="text-xl font-bold italic font-serif mb-4">
               Tunmidev
-              <hr className="border-gray-400 dark:border-white" />
+              <hr className="my-3 border-gray-400 dark:border-white" />
             </div>
 
-            {/* Links */}
-            <ul className="space-y-4 text-sm font-serif">
-              <li className="flex items-center gap-3 cursor-pointer">
-                <FaUser />
-                <a href="#about" onClick={() => setIsOpen(false)}>
-                  About Me
-                </a>
-              </li>
-              <li className="flex items-center gap-3 cursor-pointer">
-                <FaFolderOpen />
-                <a href="#projects" onClick={() => setIsOpen(false)}>
-                  Projects
-                </a>
-              </li>
-              <li className="flex items-center gap-3 cursor-pointer">
-                <FaTools />
-                <a href="#skills" onClick={() => setIsOpen(false)}>
-                  Skills
-                </a>
-              </li>
-              <li className="flex items-center gap-3 cursor-pointer">
-                <FaEnvelope />
-                <a href="#contact" onClick={() => setIsOpen(false)}>
-                  Contact
-                </a>
-              </li>
-              <div>
-                {" "}
-                <hr className="border-gray-400 dark:border-white" />
-              </div>
-              <li className="flex items-center gap-3 cursor-pointer">
+            {/* Nav Links */}
+            <ul className="space-y-2 text-sm font-serif">
+              {[
+                { icon: <FaHome />, label: "Home", href: "#home" },
+                { icon: <FaUser />, label: "About Me", href: "#about" },
+                {
+                  icon: <FaFolderOpen />,
+                  label: "Projects",
+                  href: "#projects",
+                },
+                { icon: <FaTools />, label: "Skills", href: "#skills" },
+                { icon: <FaEnvelope />, label: "Contact", href: "#contact" },
+              ].map(({ icon, label, href }) => (
+                <li
+                  key={label}
+                  className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition cursor-pointer hover:text-blue-500 dark:hover:text-blue-500"
+                >
+                  {icon}
+                  <a href={href} onClick={() => setIsOpen(false)}>
+                    {label}
+                  </a>
+                </li>
+              ))}
+
+              {/* Divider */}
+              <hr className="my-3 border-gray-400 dark:border-white" />
+
+              {/* Social Links */}
+              <li className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition cursor-pointer hover:text-blue-500 dark:hover:text-blue-500">
                 <FaLinkedin />
                 <a
                   href="https://www.linkedin.com/in/oluwatunmiseadewole"
@@ -165,7 +164,7 @@ function Navbar() {
                   LinkedIn
                 </a>
               </li>
-              <li className="flex items-center gap-3 cursor-pointer">
+              <li className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition cursor-pointer hover:text-blue-500 dark:hover:text-blue-500">
                 <FaGithub />
                 <a
                   href="https://github.com/tunmidev"
