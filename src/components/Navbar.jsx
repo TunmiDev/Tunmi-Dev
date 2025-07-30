@@ -141,7 +141,7 @@ function Navbar() {
               ].map(({ icon, label, href }) => (
                 <li
                   key={label}
-                  className="flex items-center gap-3 px-3 py-2 rounded-md  hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer hover:scale-110 transform transition duration-300
+                  className="flex items-center gap-3 px-3 py-2 rounded-md  hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer hover:scale-110 active:scale-110 transform transition duration-300
 "
                 >
                   {icon}
@@ -156,7 +156,7 @@ function Navbar() {
 
               {/* Social Links */}
               <li
-                className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer  hover:scale-110 transform transition duration-300
+                className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer  hover:scale-110 active:scale-110 transform transition duration-300
 "
               >
                 <FaLinkedin />
@@ -169,7 +169,7 @@ function Navbar() {
                 </a>
               </li>
               <li
-                className="flex items-center gap-3 px-3 py-2 rounded-md  hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer hover:scale-110 transform transition duration-300
+                className="flex items-center gap-3 px-3 py-2 rounded-md  hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer hover:scale-110 active:scale-110 transform transition duration-300
 "
               >
                 <FaGithub />
