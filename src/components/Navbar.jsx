@@ -34,7 +34,6 @@ function Navbar() {
     localStorage.setItem("theme", newTheme);
   };
 
-  // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -57,8 +56,8 @@ function Navbar() {
         {/* Logo */}
         <div className="text-xl font-bold italic font-serif">Tunmidev</div>
 
-        {/* Show nav links from md screens and up */}
-        <ul className="hidden md:flex gap-6 text-sm font-serif ml-10 lg:ml-20">
+        {/* Show nav links from sm and up */}
+        <ul className="hidden sm:flex gap-6 text-sm font-serif ml-6 md:ml-10 lg:ml-20">
           <li className="font-semibold cursor-pointer">
             <a href="#">Home</a>
           </li>
@@ -78,7 +77,7 @@ function Navbar() {
 
         {/* Right icons */}
         <div className="flex items-center gap-4 text-sm">
-          <p className="hidden md:block text-xs text-gray-500 dark:text-gray-300 italic">
+          <p className="hidden sm:block text-xs text-gray-500 dark:text-gray-300 italic">
             Software Engineer | Frontend Dev
           </p>
 
@@ -103,8 +102,8 @@ function Navbar() {
             {theme === "dark" ? <FaSun /> : <FaMoon />}
           </button>
 
-          {/* Show hamburger only on small screens (below md) */}
-          <div className="md:hidden ml-2" ref={toggleRef}>
+          {/* Hamburger only for screens below sm */}
+          <div className="sm:hidden ml-2" ref={toggleRef}>
             <button onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <FaTimes /> : <FaBars />}
             </button>
@@ -112,9 +111,9 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Dropdown: visible only on small screens */}
+      {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden absolute top-full right-4 w-[90vw] max-w-sm z-40">
+        <div className="sm:hidden absolute top-full right-4 w-[90vw] max-w-sm z-40">
           <div
             ref={menuRef}
             className="bg-white dark:bg-zinc-900 shadow-lg p-5 rounded-xl text-black dark:text-white flex flex-col"
