@@ -54,7 +54,10 @@ function Navbar() {
     <nav className="w-full px-4 sm:px-6 py-3 bg-white dark:bg-black text-black dark:text-white transition-all duration-300 fixed z-50 top-0 left-0">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         {/* Logo */}
-        <div className="text-xl font-bold italic font-serif">Tunmidev</div>
+        <div className="text-xl font-bold italic font-serif">
+          {" "}
+          <a href="/home">Tunmidev</a>
+        </div>
 
         {/* Show nav links from sm and up */}
         <ul className="hidden sm:flex gap-6 text-sm font-serif ml-6 md:ml-10 lg:ml-20">
