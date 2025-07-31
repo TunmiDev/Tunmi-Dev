@@ -24,6 +24,7 @@ const Contact = () => {
               <a
                 href="mailto:adewoleoluwatunmise@gmail.com"
                 className="flex items-center gap-2 text-blue-600 hover:underline"
+                aria-label="Send email to adewoleoluwatunmise@gmail.com"
               >
                 <MdEmail className="text-lg" />
                 adewoleoluwatunmise@gmail.com
