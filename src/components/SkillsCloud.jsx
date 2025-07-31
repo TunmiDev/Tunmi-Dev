@@ -71,25 +71,11 @@ const cloudProps = {
   },
 };
 
-// 📱 Static fallback list (for mobile)
-const StaticSkillList = () => (
-  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm text-white">
-    {slugs.map((tech) => (
-      <div
-        key={tech}
-        className="py-2 px-4 rounded-lg text-center shadow-md hover:scale-105 transition-transform"
-      >
-        {tech.toUpperCase()}
-      </div>
-    ))}
-  </div>
-);
-
 // 💼 Full Skills Section Component
 const SkillsCloud = () => {
   const icons = useIcons(slugs);
   return (
-    <section id="skills" className="py-16 text-white">
+    <section id="skills" className="text-white">
       {/* 3D Cloud on all screens */}
       <div className="flex justify-center">
         <div className="h-[500px] w-full flex justify-center items-center">
