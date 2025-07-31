@@ -207,7 +207,7 @@ const SkillsGroup = () => {
             {/* Skills */}
             {isOpen && (
               <div className="px-4 pb-4 pt-2">
-                <div className="flex flex-wrap gap-1.5">
+                <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6">
                   {skills.map((skill) => (
                     <SkillCard key={skill.name} {...skill} />
                   ))}
