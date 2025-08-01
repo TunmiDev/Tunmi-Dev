@@ -13,7 +13,7 @@ const Skills = () => {
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.2 }}
         >
           <SkillsCloud />
         </motion.div>

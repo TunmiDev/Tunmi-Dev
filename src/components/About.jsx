@@ -9,7 +9,7 @@ const About = () => {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       id="about"
       className="px-4 sm:px-6 py-20 max-w-6xl mx-auto transition-all duration-300"
     >

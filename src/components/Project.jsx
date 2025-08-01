@@ -108,7 +108,7 @@ const Project = () => {
           key={index}
           initial={{ opacity: 0, x: isMobile ? -60 : 0, y: isMobile ? 0 : 40 }}
           whileInView={{ opacity: 1, x: 0, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ amount: 0.2 }}
           transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
           className="rounded-2xl overflow-hidden shadow-lg bg-white/10 backdrop-blur-md border border-white/20 dark:bg-white/5 dark:border-white/10 transition-all duration-300"
         >
