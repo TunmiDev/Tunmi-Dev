@@ -12,7 +12,7 @@ const Skills = () => {
           className="w-full md:w-1/2 flex justify-center items-center h-1/2 md:h-auto mb-10 md:mb-0"
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           <SkillsCloud />
