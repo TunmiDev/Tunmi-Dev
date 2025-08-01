@@ -41,19 +41,38 @@ const Hero = () => {
           </span>
         </div>
 
-        {/* Image Stack */}
-        <div className="relative w-[220px] h-[280px] sm:w-[240px] sm:h-[300px] md:w-[260px] md:h-[340px]">
-          <img
-            src={Profile1}
-            alt="Profile 1"
-            className="absolute top-4 left-10 w-[75%] h-[80%] object-cover grayscale shadow-lg rounded-md border-2 border-white dark:border-black z-30"
-          />
-          <img
+        {/* Animated Image Stack */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative w-[220px] h-[280px] sm:w-[240px] sm:h-[300px] md:w-[260px] md:h-[340px] group cursor-pointer"
+        >
+          {/* Background Image - Animated on scroll and hover */}
+          <motion.img
             src={Profile2}
-            alt="Profile 2"
-            className="absolute top-16 left-0 w-[75%] h-[80%] object-cover grayscale shadow-md rounded-md border-2 border-white dark:border-black z-20"
+            alt="Profile grayscale side view"
+            loading="lazy"
+            initial={{ x: 0, rotate: 0 }}
+            whileInView={{ x: -12, rotate: -3 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+            className="absolute top-16 left-0 w-[75%] h-[80%] object-cover grayscale shadow-md rounded-md border-2 border-white dark:border-black z-20 transition-all duration-500 ease-in-out group-hover:-translate-x-20 group-hover:-rotate-12 group-hover:scale-105"
           />
-        </div>
+
+          {/* Foreground Image - static but smooth transition */}
+          <motion.img
+            src={Profile1}
+            alt="Profile colored front view"
+            loading="lazy"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            viewport={{ once: true }}
+            className="absolute top-4 left-10 w-[75%] h-[80%] object-cover grayscale shadow-lg rounded-md border-2 border-white dark:border-black z-30 transition-all duration-500 ease-in-out"
+          />
+        </motion.div>
 
         {/* Bio */}
         <div className="text-center lg:text-left w-full sm:w-[80%] lg:w-1/3 text-sm sm:text-base leading-relaxed text-gray-800 dark:text-gray-300">
