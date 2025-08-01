@@ -208,7 +208,7 @@ const SkillsGroup = () => {
             {isOpen && (
               <div className="px-4 pb-4 pt-2">
                 <div
-                  className="grid grid-cols-4 gap-4 sm:gap-2 md:gap-3
+                  className="grid grid-cols-4 gap-4  md:gap-3
                 sm:grid-cols-5 md:grid-cols-6"
                 >
                   {skills.map((skill) => (
