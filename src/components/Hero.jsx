@@ -1,13 +1,18 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 import Profile1 from "../assets/Profile1.jpg";
 import Profile2 from "../assets/Profile2.jpg";
 
 const Hero = () => {
   return (
-    <section
+    <motion.section
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-black dark:text-white px-6 py-10 transition-all duration-300"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
     >
       {/* Title */}
       <h1 className="text-center text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mt-12 sm:mt-0">
@@ -59,7 +64,7 @@ const Hero = () => {
           </p>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import {
   FaGithub,
   FaLinkedin,
@@ -51,7 +52,12 @@ function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav className="w-full px-4 sm:px-6 py-3 bg-white dark:bg-black text-black dark:text-white transition-all duration-300 fixed z-50 top-0 left-0">
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="w-full px-4 sm:px-6 py-3 bg-white dark:bg-black text-black dark:text-white transition-all duration-300 fixed z-50 top-0 left-0"
+    >
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         {/* Logo */}
         <div className="text-xl font-bold italic font-serif">
@@ -180,7 +186,7 @@ function Navbar() {
           </div>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 }
 
