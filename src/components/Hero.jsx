@@ -12,7 +12,7 @@ const Hero = () => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      // viewport={{ once: true }}
+      viewport={{ once: true }}
     >
       {/* Title */}
       <h1 className="text-center text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mt-12 sm:mt-0">

@@ -9,7 +9,7 @@ const About = () => {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       id="about"
       className="px-4 sm:px-6 py-20 max-w-6xl mx-auto transition-all duration-300"
     >
@@ -17,15 +17,22 @@ const About = () => {
         About Me<span className="text-primary">.</span>
       </h2>
 
+      {/* ✅ Wrap both image and text in a flex container */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-10">
         {/* Image Section */}
-        <div className="w-full md:w-1/3 flex justify-center md:justify-start">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full md:w-1/3 flex justify-center md:justify-start"
+        >
           <img
             src={Profile2}
             alt="Oluwatunmise"
             className="rounded-2xl w-[180px] sm:w-[200px] md:w-[250px] h-auto object-cover shadow-lg transition duration-500"
           />
-        </div>
+        </motion.div>
 
         {/* Text Section */}
         <div className="w-full md:w-2/3 text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300 mt-8 md:mt-0">
