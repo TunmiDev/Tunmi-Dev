@@ -17,6 +17,7 @@ import {
   SiVite,
   SiCss3,
 } from "react-icons/si";
+import { section } from "framer-motion/client";
 
 // Icon lookup
 const techIcons = {
@@ -102,79 +103,85 @@ const Project = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {projects.map((project, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, x: isMobile ? -60 : 0, y: isMobile ? 0 : 40 }}
-          whileInView={{ opacity: 1, x: 0, y: 0 }}
-          viewport={{ amount: 0.2 }}
-          transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
-          className="rounded-2xl overflow-hidden shadow-lg bg-white/10 backdrop-blur-md border border-white/20 dark:bg-white/5 dark:border-white/10 transition-all duration-300"
-        >
-          {/* Screenshot */}
-          <div className="p-4">
-            <img
-              src={project.screenshot}
-              alt={`${project.title} Screenshot`}
-              className="rounded w-full"
-            />
-          </div>
+    <section id="projects">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{
+              opacity: 0,
+              x: isMobile ? -60 : 0,
+              y: isMobile ? 0 : 40,
+            }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            viewport={{ amount: 0.2 }}
+            transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
+            className="rounded-2xl overflow-hidden shadow-lg bg-white/10 backdrop-blur-md border border-white/20 dark:bg-white/5 dark:border-white/10 transition-all duration-300"
+          >
+            {/* Screenshot */}
+            <div className="p-4">
+              <img
+                src={project.screenshot}
+                alt={`${project.title} Screenshot`}
+                className="rounded w-full"
+              />
+            </div>
 
-          {/* Details */}
-          <div className="p-6 text-black dark:text-white flex flex-col gap-4">
-            {/* Title + Logos */}
-            <div className="flex items-center gap-3 flex-wrap">
-              <h3 className="text-xl font-semibold">{project.title}</h3>
-              <div className="flex gap-2 text-xl">
-                {project.logos.map((tech, i) => (
-                  <span key={i}>{techIcons[tech]}</span>
+            {/* Details */}
+            <div className="p-6 text-black dark:text-white flex flex-col gap-4">
+              {/* Title + Logos */}
+              <div className="flex items-center gap-3 flex-wrap">
+                <h3 className="text-xl font-semibold">{project.title}</h3>
+                <div className="flex gap-2 text-xl">
+                  {project.logos.map((tech, i) => (
+                    <span key={i}>{techIcons[tech]}</span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-sm text-black dark:text-gray-300">
+                {project.description}
+              </p>
+
+              {/* Stack Tags */}
+              <div className="flex flex-wrap gap-2">
+                {project.stack.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="bg-gray-200 text-black dark:bg-zinc-800 dark:text-white px-2 py-1 rounded-full text-xs capitalize"
+                  >
+                    {tech}
+                  </span>
                 ))}
               </div>
-            </div>
 
-            {/* Description */}
-            <p className="text-sm text-black dark:text-gray-300">
-              {project.description}
-            </p>
+              {/* Buttons */}
 
-            {/* Stack Tags */}
-            <div className="flex flex-wrap gap-2">
-              {project.stack.map((tech, idx) => (
-                <span
-                  key={idx}
-                  className="bg-gray-200 text-black dark:bg-zinc-800 dark:text-white px-2 py-1 rounded-full text-xs capitalize"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            {/* Buttons */}
-
-            <div className="flex justify-center gap-4 mt-6 text-center">
-              <MotionButton
-                href={project.sourceUrl}
-                className="group bg-zinc-200 px-4 py-4 rounded-2xl flex items-center gap-2 text-sm hover:bg-black hover:text-white transition"
-              >
-                <FaGithub className="text-lg text-gray-500 group-hover:text-white group-hover:animate-bounce transition" />
-                Source
-              </MotionButton>
-
-              {project.liveUrl && (
+              <div className="flex justify-center gap-4 mt-6 text-center">
                 <MotionButton
-                  href={project.liveUrl}
-                  className="group bg-blue-100 px-4 py-4 rounded-2xl flex items-center gap-2 text-sm hover:bg-blue-600 text-blue-900 hover:text-white transition"
+                  href={project.sourceUrl}
+                  className="group bg-zinc-200 px-4 py-4 rounded-2xl flex items-center gap-2 text-sm hover:bg-black hover:text-white transition"
                 >
-                  <FiGlobe className="text-lg text-blue-300 group-hover:text-white group-hover:animate-bounce transition" />
-                  Website
+                  <FaGithub className="text-lg text-gray-500 group-hover:text-white group-hover:animate-bounce transition" />
+                  Source
                 </MotionButton>
-              )}
+
+                {project.liveUrl && (
+                  <MotionButton
+                    href={project.liveUrl}
+                    className="group bg-blue-100 px-4 py-4 rounded-2xl flex items-center gap-2 text-sm hover:bg-blue-600 text-blue-900 hover:text-white transition"
+                  >
+                    <FiGlobe className="text-lg text-blue-300 group-hover:text-white group-hover:animate-bounce transition" />
+                    Website
+                  </MotionButton>
+                )}
+              </div>
             </div>
-          </div>
-        </motion.div>
-      ))}
-    </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
   );
 };
 
