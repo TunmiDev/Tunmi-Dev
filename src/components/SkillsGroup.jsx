@@ -47,7 +47,7 @@ const SkillCard = ({ name, icon, color }) => {
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="cursor-pointer p-2 w-[68px] flex flex-col items-center rounded-md bg-white dark:bg-gray-800 shadow-sm transition-transform duration-300 hover:scale-110 border-2 border-transparent hover:border-current"
+      className="cursor-pointer p-2 w-full max-w-[72px]  flex flex-col items-center rounded-md bg-white dark:bg-gray-800 shadow-sm transition-transform duration-300 hover:scale-110 border-2 border-transparent hover:border-current"
       style={{ color }}
     >
       <span
@@ -206,7 +206,7 @@ const SkillsGroup = () => {
 
             {/* Skills */}
             {isOpen && (
-              <div className="px-4 pb-4 pt-2">
+              <div className="px-6 pb-5 pt-3">
                 <div className="grid grid-cols-4 gap-x-4 gap-y-6 sm:grid-cols-5 sm:gap-x-3 sm:gap-y-4 md:grid-cols-6 md:gap-4">
                   {skills.map((skill) => (
                     <SkillCard key={skill.name} {...skill} />
