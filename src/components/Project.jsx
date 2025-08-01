@@ -62,8 +62,8 @@ const projects = [
     description:
       "Minimal advice generator app built with React. Fetches real-time advice from the Advice Slip API on user interaction, using reusable components and clean UI design.",
     screenshot: advice,
-    sourceUrl: "https://github.com/noisekun",
-    liveUrl: "https://noisekun.vercel.app",
+    sourceUrl: "https://github.com/TunmiDev/advice-generator",
+    liveUrl: "https://advice-generator-rosy-eight.vercel.app/",
     logos: ["reactjs", "javascript", "css", "vite"],
     stack: ["reactjs", "javascript", "css", "vite"],
   },
