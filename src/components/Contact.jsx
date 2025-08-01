@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
@@ -11,7 +12,13 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left: Contact Info */}
-          <div className="space-y-6">
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             <p className="text-lg text-gray-800 dark:text-gray-300">
               I'm open to freelance work, collaborations, and internships. Feel
               free to reach out through the form or any of my socials below.
@@ -59,13 +66,17 @@ const Contact = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: Contact Form */}
-          <form
+          <motion.form
             action="https://formspree.io/f/xzzgwolw"
             method="POST"
             className="space-y-4 bg-white dark:bg-gray-900 p-6 rounded-md shadow-sm"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
           >
             <div>
               <label className="block mb-1 font-medium text-sm text-gray-700 dark:text-gray-300">
@@ -109,9 +120,10 @@ const Contact = () => {
             >
               Send Message
             </button>
-          </form>
+          </motion.form>
         </div>
       </div>
+
       <footer className="text-center text-sm text-gray-500 dark:text-gray-400 py-6">
         © {new Date().getFullYear()} TunmiDev. All rights reserved.
       </footer>
