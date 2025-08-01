@@ -1,9 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Profile2 from "../assets/Profile2.jpg";
 
 const About = () => {
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       id="about"
       className="px-4 sm:px-6 py-20 max-w-6xl mx-auto transition-all duration-300"
     >
@@ -66,7 +71,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
