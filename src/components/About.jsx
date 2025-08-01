@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Profile2 from "../assets/Profile2.jpg";
+import MotionButton from "./MotionButton";
 
 const About = () => {
   return (
@@ -54,20 +55,20 @@ const About = () => {
           </p>
 
           <div className="mt-6 flex gap-4 flex-wrap">
-            <a
+            <MotionButton
               href="#contact"
               className="px-5 py-2 bg-black text-white dark:bg-white dark:text-black rounded-md font-medium hover:scale-105 transition"
             >
               Contact Me
-            </a>
+            </MotionButton>
 
-            <a
+            <MotionButton
               href="/Adewole-Oluwatunmise-CV.pdf"
               download="Adewole-Oluwatunmise-CV.pdf"
               className="px-5 py-2 border-2 border-black dark:border-white text-black dark:text-white rounded-md font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
             >
               Download CV
-            </a>
+            </MotionButton>
           </div>
         </div>
       </div>

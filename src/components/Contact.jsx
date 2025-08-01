@@ -1,7 +1,7 @@
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { motion } from "framer-motion";
-
+import MotionButton from "./MotionButton";
 const Contact = () => {
   return (
     <section id="contact" className="py-16 px-4 md:px-12 lg:px-24">
@@ -114,12 +114,12 @@ const Contact = () => {
               ></textarea>
             </div>
 
-            <button
+            <MotionButton
               type="submit"
               className="bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded hover:opacity-90 transition-all"
             >
               Send Message
-            </button>
+            </MotionButton>
           </motion.form>
         </div>
       </div>
