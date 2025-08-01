@@ -206,7 +206,7 @@ const SkillsGroup = () => {
 
             {/* Skills */}
             {isOpen && (
-              <div className="px-6 pb-5 pt-3">
+              <div className="px-4 pb-4 pt-2">
                 <div className="grid grid-cols-4 gap-x-4 gap-y-6 sm:grid-cols-5 sm:gap-x-3 sm:gap-y-4 md:grid-cols-6 md:gap-4">
                   {skills.map((skill) => (
                     <SkillCard key={skill.name} {...skill} />
