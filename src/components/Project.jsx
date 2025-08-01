@@ -8,6 +8,7 @@ import WorldClock from "../assets/WorldClock.png";
 import advice from "../assets/advice.png";
 import portfolio from "../assets/portfolio.png";
 import ule from "../assets/ule.png";
+import MotionButton from "./MotionButton";
 import {
   SiJavascript,
   SiTypescript,
@@ -150,27 +151,24 @@ const Project = () => {
             </div>
 
             {/* Buttons */}
+
             <div className="flex justify-center gap-4 mt-6 text-center">
-              <a
+              <MotionButton
                 href={project.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="group bg-zinc-200 px-4 py-4 rounded-2xl flex items-center gap-2 text-sm hover:bg-black hover:text-white transition"
               >
                 <FaGithub className="text-lg text-gray-500 group-hover:text-white group-hover:animate-bounce transition" />
                 Source
-              </a>
+              </MotionButton>
 
               {project.liveUrl && (
-                <a
+                <MotionButton
                   href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="group bg-blue-100 px-4 py-4 rounded-2xl flex items-center gap-2 text-sm hover:bg-blue-600 text-blue-900 hover:text-white transition"
                 >
                   <FiGlobe className="text-lg text-blue-300 group-hover:text-white group-hover:animate-bounce transition" />
                   Website
-                </a>
+                </MotionButton>
               )}
             </div>
           </div>
