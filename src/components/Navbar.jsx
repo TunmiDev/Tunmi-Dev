@@ -112,7 +112,7 @@ function Navbar() {
           </button>
 
           {/* Hamburger only for screens below sm */}
-          <div className="sm:hidden ml-2" ref={toggleRef}>
+          <div className="md:hidden ml-2" ref={toggleRef}>
             <button onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <FaTimes /> : <FaBars />}
             </button>
