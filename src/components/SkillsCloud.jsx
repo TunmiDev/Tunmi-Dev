@@ -68,6 +68,7 @@ const cloudProps = {
     clickToFront: 500,
     tooltip: "native",
     outlineColour: "#0000",
+    textColour: null,
   },
 };
 
